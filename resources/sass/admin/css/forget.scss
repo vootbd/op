@@ -1,0 +1,180 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+
+.forget-password-block {
+    width: 410px;
+    height: 373px;
+    margin-top: 142px;
+    margin-bottom: 250px;
+    .logo-block {
+        height: 73px;
+        margin-bottom: 34px;
+        img {
+            height: 39px;
+        }
+    }
+    .form-block {
+        .hader-text {
+            @include font_style(20px, null, null, 20px);
+            padding-bottom: 32px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            input{
+                margin-bottom: 8px;
+            }
+            .forget-text{
+                @include font_style(12px, $black_75, 400, 20px);
+            }
+        }
+        background-color: $white;
+        box-shadow: 0 0 10px #dee2e6;
+        padding: 40px 45px;
+        .input-label {
+            @include font_style(16px, $black_75, 400, 20px);
+            margin-bottom: 6px;
+        }
+        .btn-submit {
+            @include auth_button();
+            margin-top: 5px;
+        }
+    }
+    .forget-footer {
+        width: 410px;
+        padding: 40px 45px;
+        flex-direction: column;
+        @include font_style(12px, $black_75);
+        padding-top: 30px;
+        .comm {
+            margin-bottom: 16px;
+            img {
+                height: 16px;
+            }
+            span {
+                margin-left: 11px;
+                @include font_style(12px, $black_75);
+            }
+        }
+        .email-not-send {
+            img {
+                @include font_style(12px, $black_75);
+                height: 16px;
+            }
+            span {
+                margin-left: 11px;
+                @include font_style(12px, $black_75);
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .forget-password-block {
+        height: 472px;
+        margin-top: 120px;
+        .logo-block {
+            height: 56px;
+            img {
+                height: 31px;
+            }
+        }
+        .form-block {
+            .hader-text {
+                padding-bottom: 27px;
+            }
+            .form-group {
+                .forget-text{
+                    margin-top: 11px;
+                }
+            }
+            .btn-submit {
+                @include auth_button(40px);
+                @include font_style(16px);
+            }
+        }
+    }
+}
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 767px
+==================================================*/
+@media screen and (max-width: 767px) {
+    .forget-password-block {
+        height: auto;
+        margin-top: 41px;
+        width: 100%;
+        max-width: 292px;
+        margin-bottom: 120px;
+        .logo-block {
+            height: 27px;
+            img {
+                height: 26px;
+            }
+        }
+        .form-block {
+            padding: 25px 22px;
+            .hader-text {
+                @include font_style(18px);
+                padding-bottom: 20px;
+            }
+            .form-group {
+                .forget-text{
+                    margin-top: 10px;
+                }
+                input {
+                    margin-bottom: 10px;
+                }
+            }
+            .input-label {
+                @include font_style(12px)
+            }
+            .btn-submit {
+                @include auth_button(40px);
+                @include font_style(14px);
+            }
+        }
+        .forget-footer {
+            width: 100%;
+            padding: 17px 22px;
+            max-width: 292px;
+        }
+        .comm {
+            margin-bottom: 16px;
+            span {
+                margin-left: 11px;
+                @include font_style(12px, $black_75);
+            }
+        }
+        .email-not-send {
+            span {
+                margin-left: 11px;
+                @include font_style(9px, $black_75);
+            }
+        }
+        .mobile-res{
+            margin-top: 15px;
+            margin-bottom: 3px !important;
+            .btn-submit {
+                @include auth_button(40px);
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 600px
+==================================================*/
+@media only screen and (max-width: 320px) and (orientation: landscape),
+  only screen and (max-width: 700px) and (orientation: landscape) {
+    .forget-password-block {
+        margin-top: 20px;
+    }
+}

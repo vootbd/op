@@ -1,0 +1,612 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.inner-content {
+    width: 100%;
+    .box-content {
+        margin-left: 20px;
+        background-color: $white;
+        .page-title {
+            height: 70px;
+            border-bottom: 20px solid #f6f6f6;
+            padding-left: 20px;
+            h1 {
+                @include font_style(16px, $black_55, 400,0);
+            }
+        }
+        .box-inner-content {
+            display: flex;
+            background-color: $white_F6;
+            .form-block {
+                margin:0 0 5px 0;
+                width: 100%;
+                display: flex;
+                .inner-form {
+                    background-color: $white;
+                    width: 67%;
+                    padding-right: 18px;
+                    padding-bottom: 37px;
+                    .form-content {
+                        padding: 20px 0 0 20px;
+                        .form-group {
+                            margin-bottom: 8px;
+                            label {
+                                @include font_style(14px, $black_33, 400, 20px);
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .label-section {
+                                width: 184px;
+                                height: 34px;
+                            }
+                            .field-section {
+                                .url_map {
+                                    margin-left: 37%;
+                                }
+                                input,select{
+                                   width: 100%;
+                                }
+                                textarea {
+                                    height: 134px;
+                                }
+                                .url-input {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    width: 100%;
+                                    label{
+                                        margin-right: 50px;
+                                        color: $green_20;
+                                        width: 50%;
+                                    }
+                                }
+                                .latidude {
+                                    display: flex;
+                                    label{
+                                        height: 34px;
+                                        width: 100px;
+                                    }
+                                    input {
+                                        &:nth-of-type(1){
+                                            margin-right: 0px;
+                                        }
+                                    }
+                                    .latitude-block {
+                                        flex-wrap: wrap;
+                                        width: 100%;
+                                        input {
+                                            width: calc(100% - 100px);
+                                        }
+                                        .error_msg {
+                                            margin-left: 100px;
+                                        }
+                                    }
+                                    .longitude-block {
+                                        flex-wrap: wrap;
+                                        width: 100%;
+                                        label {
+                                            justify-content: center;
+                                        }
+                                        input {
+                                            width: calc(100% - 100px);
+                                        }
+                                        .error_msg {
+                                            margin-left: 100px;
+                                        }
+                                    }
+                                }
+                            }
+                            .image-block{
+                                margin-top: 40px;
+                                margin-bottom: 20px;
+                                #coverImagePreview {
+                                    height: 470px;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    .form-submission {
+                        padding: 0 0 122px 204px;
+                        .btn-submit{
+                            width: 130px;
+                        }
+                    }
+                }
+                .right-sidebar {
+                    border-left: 20px solid $white_F6;
+                    width: 33%;
+                    .publish-content {
+                        background-color: $white;
+                        margin-bottom: 15px;
+                        .publish-header {
+                            display: flex;
+                            align-items: center;
+                            padding: 0 15px;
+                            height: 43px;
+                            border-bottom: 1px solid $border_color_EB;
+                            span {
+                                @include font_style(13px,null,500);
+                            }
+                        }
+                        .publish-body {
+                            padding: 10px 15px 35px 15px;
+                            border-bottom-left-radius: 5px;
+                            border-bottom-right-radius: 5px;
+                            ul {
+                                list-style-type: none;
+                                padding-inline-start: 0;
+                                li {
+                                    padding: 5px 0 0 0;
+                                    cursor: pointer;
+                                }
+                                .inner-ul {
+                                    padding-left: 30px;
+                                }
+                            }
+                            .publish-label {
+                                margin: 0 0 5px 0;
+                                @include font_style(13px,$black);
+                            }
+                            .image-info {
+                                margin-top: 30px;
+                                .image-info-title{
+                                    margin-top: 15px;
+                                }
+                            }
+                            .submit-section {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding:12px 0 10px 0;
+                                button {
+                                    padding: 0 20px;
+                                    @include font_style(14px,$white);
+                                    background-color: $green_20;
+                                    border: 0;
+                                    border-radius: 3px;
+                                    height: 34px;
+                                }
+                                .reset-btn {
+                                    background-color: $white;
+                                }
+                                .custom-icon {
+                                    color:$black_1A;
+                                    &:hover {
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                            #remove-img {
+                                @include font_style(14px,$green_20);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        .box-content {
+            margin-left: 0px;
+            .page-title {
+                height: 70px;
+                padding-left: 14px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .box-inner-content{
+                .form-block {
+                    .form-content {
+                        padding: 14px;
+                        hr {
+                            margin: 12px -12px 12px;
+                        }
+                        .form-group {
+                            label {
+                                @include font_style(12px);
+                            }
+                            .mobile-res {
+                                flex-direction: row !important;
+                            }
+                            .field-section {
+                                input, textarea, select {
+                                    width: 100%;
+                                }
+                            }
+                            .image-block{
+                                #coverImagePreview {
+                                    height: 370px;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .dropdown-body {
+                            margin: 20px 0 0;
+                            .basic_informations_error {
+                                margin-left: 53px !important;
+                            }
+                            .dropdown-form-group {
+                                display: flex;
+                                margin:7px 0;
+                                label {
+                                    @include font_style(13px);
+                                    width: 56px !important;
+                                }
+                            }
+                        }
+                    }
+                    .right-sidebar {
+                        .publish-content{
+                            border-left: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .box-inner-content{
+                .form-block {
+                    .form-content {
+                        .form-group {
+                            label {
+                                @include font_style(12px);
+                            }
+                            .field-section {
+                                input, textarea, select {
+                                    width: 100%;
+                                }
+                            }
+                            .image-block{
+                                #coverImagePreview {
+                                    height: 320px;
+                                    width: 100%;
+                                }
+                            }
+                        }   
+                    }
+                    .right-sidebar {
+                        border-left: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 36px;
+                border-bottom: 1px solid $border_color_EB;
+                padding-left: 10px;
+                h1 {
+                    @include font_style(13px, $black_55, 400,0);
+                }
+            }
+            .box-inner-content {
+                display: flex;
+                background-color: $white;
+                .form-block {
+                    margin:0 0 5px 0;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    display: flex;
+                    .inner-form {
+                        width: 100%;
+                        margin-right: 0;
+                        padding-bottom: 0;
+                        padding-right: 0px;
+                        .form-content {
+                            padding: 10px 10px 0 10px;
+                            .form-group {
+                                margin-bottom: 8px;
+                                label {
+                                    @include font_style(12px, $black_33, 400, 20px);
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                                .label-section {
+                                    width: 100%;
+                                    height: 30px;
+                                }
+                                .field-section {
+                                    .url_map {
+                                        margin-left: 0;
+                                    }
+                                    input,select{
+                                       width: 100%;
+                                    }
+                                    textarea {
+                                        height: 114px;
+                                        width: 100%;
+                                    }
+                                    .url-input {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        flex-direction: column;
+                                        label{
+                                            margin-right: 0;
+                                        }
+                                    }
+                                    .latidude {
+                                        display: flex;
+                                        flex-direction: column;
+                                        label{
+                                            height: 30px;
+                                            width: 100%;
+                                        }
+                                        input {
+                                            &:nth-of-type(1){
+                                                margin-right: 0px;
+                                            }
+                                        }
+                                        .latitude-block {
+                                            flex-wrap: wrap;
+                                            width: 100%;
+                                            input {
+                                                width: 100%
+                                            }
+                                            .error_msg {
+                                                margin-left: 0;
+                                            }
+                                        }
+                                        .longitude-block {
+                                            flex-wrap: wrap;
+                                            width: 100%;
+                                            label {
+                                                justify-content: start;
+                                            }
+                                            input {
+                                                width: 100%
+                                            }
+                                            .error_msg {
+                                                margin-left: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                                .image-block{
+                                    #coverImagePreview {
+                                        height: 270px;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                            .dropdown-div {
+                                margin: 0;
+                                .dropdown-header {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    padding:0 13px;
+                                    border-radius: 3px;
+                                    background-color: $border_color_EB;
+                                    height: 40px;
+                                    margin-bottom: 10px;
+                                    .dropdown-text {
+                                        @include font_style(12px,$black);
+                                    }
+                                    .fa {
+                                        @include font_style(null,$black);
+                                        &:hover {
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                                .dropdown-body {
+                                    margin: 20px 0 0;
+                                    .basic_informations_error {
+                                        margin-left: 0 !important;
+                                    }
+                                    .dropdown-form-group {
+                                        flex-direction: column;
+                                        display: flex;
+                                        margin:7px 0;
+                                        label {
+                                            @include font_style(12px);
+                                            width: 100%;
+                                        }
+                                    }
+                                    .section-two {
+                                        flex-direction: column;
+                                        label {
+                                            width: 100%;
+                                        }
+                                        textarea {
+                                            height: 114px;
+                                        }
+                                    }
+                                    button {
+                                        background-color: $white;
+                                        border-radius: 6px;
+                                        border:1px solid $black_BD;
+                                        padding:4px 15px;
+                                        margin-bottom: 35px;
+                                        &:hover{
+                                            background-color: $blue_7A;
+                                        }
+                                    }
+                                    .image-details-block:nth-of-type(1) {
+                                        padding-bottom: 0;
+                                    }
+                                    .image-details-block {
+                                        padding-bottom: 0;
+                                        display: flex;
+                                        justify-content: flex-start;
+                                        flex-wrap: wrap;
+                                        width: 100%;
+                                        .image-text-block {
+                                            width: 100%;
+                                            @include font_style(12px);
+                                            margin-bottom: 12px;
+                                        }
+                                        .details-block {
+                                            display: flex;
+                                            flex-direction: column;
+                                            width: 100%;
+                                            span {
+                                                @include font_style(12px);
+                                                margin-bottom: 12px;
+                                            }
+                                            .file{
+                                                padding-bottom: 12px;
+                                                .file-choose {
+                                                    background-color: $gray_BC;
+                                                    border: 0;
+                                                    height: 32px;
+                                                    width: auto;
+                                                    border-radius: 2px;
+                                                    color: $white;
+                                                    margin: 0;
+                                                    @include font_style(12px);
+                                                }
+                                                span {
+                                                    margin-left: 0;
+                                                    @include font_style(12px)
+                                                }
+                                            }
+                                        }
+                                        .image-block {
+                                            display: flex;
+                                            flex-direction: column;
+                                            margin-left: 0;
+                                            .img {
+                                                height: 270px;
+                                                width: 340px;
+                                            }
+                                            a {
+                                                @include font_style(12px,$blue_00);
+                                                margin-top: 5px;
+                                                &:hover {
+                                                    cursor: pointer;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .not-selected {
+                                        padding-left:0;
+                                        width: 100%;
+                                        .image-text-block {
+                                            display: none;
+                                        }
+                                        .details-block {
+                                            .file {
+                                                #file {
+                                                    display: block !important;
+                                                }
+                                            }
+                                        }
+                                        .image-block {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+                        .form-submission {
+                            padding: 0 0 122px 204px;
+                            .btn-submit{
+                                width: 130px;
+                            }
+                        }
+                    }
+                    .right-sidebar {
+                        width: 100%;
+                        border-top: 1px solid $border_color_EB;
+                        border-left: 0px;
+                        .publish-content {
+                            margin-bottom: 15px;
+                            border: 0px;
+                            .publish-header {
+                                border-top: 10px solid $white_F6;
+                                display: flex;
+                                align-items: center;
+                                padding: 0 15px;
+                                height: 43px;
+                                border-bottom: 0;
+                                span {
+                                    @include font_style(12px,null,500);
+                                }
+                            }
+                            .publish-body {
+                                padding: 10px 15px 35px 15px;
+                                border-top: 1px solid $border_color_EB;
+                                ul {
+                                    list-style-type: none;
+                                    padding-inline-start: 0;
+                                    li {
+                                        padding: 5px 0 0 0;
+                                    }
+                                    .inner-ul {
+                                        padding-left: 30px;
+                                    }
+                                }
+                                .publish-label {
+                                    margin: 0 0 5px 0;
+                                    @include font_style(12px,$black);
+                                }
+                                .submit-section {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding:12px 0 10px 0;
+                                    button {
+                                        padding: 0 20px;
+                                        @include font_style(12px,$white);
+                                        border: 0;
+                                        border-radius: 3px;
+                                        height: 30px;
+                                    }
+                                    .reset-btn {
+                                        background-color: $white;
+                                    }
+                                    .custom-icon {
+                                        color:$black_1A;
+                                        &:hover {
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                                #remove-img {
+                                    @include font_style(12px,$green_20);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

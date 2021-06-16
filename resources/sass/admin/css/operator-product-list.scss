@@ -1,0 +1,711 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.gj-unselectable {
+    @include font_style(14px, $black_75, 400, 20px);
+}
+.fa-chevron-right:before, .fa-chevron-left:before {
+    color: #BDBDBD;
+}
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        @include box_shadow_small;
+        &.mt-20 {
+            margin-top: 20px;
+        }
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+        }
+        hr {
+            margin: 12px 0 12px;
+        }
+        .form-block {
+            .form-content {
+                padding: 26px;
+                .form-group {
+                    margin-bottom: 14px;
+                    label {
+                        @include font_style(14px, $black_75, 400, 20px);
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .label-section {
+                        width: 175px;
+                    }
+                    .field-section {
+                        &.custom-with {
+                            width: calc(100% - 340px);
+                            flex-wrap: wrap;
+                        }
+                        select, input {
+                           width: 309px;
+                        }
+                        .number {
+                            width: 142px;
+                        }
+                        .from-date {
+                            span {
+                                width: 50px;
+                                @include font_style(14px, $black_9E);
+                                height: 34px;
+                            }
+                            .gj-datepicker {
+                                input {
+                                    width: 271px;
+                                    @include font_style(14px, $black_9E);
+                                    border: 1px solid $black_BD;
+                                    margin-bottom: 13px;
+                                }
+                                button {
+                                    padding: 0;
+                                    height: 34px;
+                                    border: 1px solid $black_BD;
+                                    i {
+                                        color: $black_9E;
+                                    }
+                                }
+                            }
+                        }
+                        .to-date {
+                            span {
+                                width: 50px;
+                                @include font_style(14px, $black_9E);
+                                height: 34px;
+                            }
+                            .gj-datepicker {
+                                input {
+                                    width: 271px;
+                                    @include font_style(14px, $black_9E);
+                                    border: 1px solid $black_BD;
+                                }
+                                button {
+                                    padding: 0;
+                                    height: 34px;
+                                    border: 1px solid $black_BD;
+                                    i {
+                                        color: $black_9E;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .custom-checkbox {
+                        padding-right: 0;
+                        width: 160px;
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+            .form-submission {
+                padding: 20px 26px;
+                border-top: 1px solid $border_color_EB;
+                .btn-clear {
+                    @include clear_button(null, 20px);
+                }
+                .btn-submit {
+                    @include submit_button();
+                }
+            }
+        }
+        .search-info-block {
+            padding: 0 19px 0 28px;
+            flex-wrap: wrap;
+            h2 {
+                @include font_style(14px, $black_9E, 400, 20px);
+                width: 100%;
+            }
+            .sort-block {
+                width: 139px;
+                background-image: url('../../../image/sort-down.svg');
+                background-repeat: no-repeat;
+                background-position: right 10px center;
+                -webkit-appearance: none;
+            }
+        }
+        .data-container {
+            padding: 0 20px;
+            .data-block {
+                padding: 10px 28px 0;
+                height: 54px;
+                width: 100%;
+                @include font_style(14px,
+                $black_55,
+                400,
+                36px);
+                &.data-row {
+                    @include font_style(14px,
+                    $black_55,
+                    400,
+                    34px);
+                    padding: 10px 28px;
+                    height: auto;
+                    border-top: 1px solid $border_color_EB;
+                    &.bg {
+                        background-color: #f9f9f9;
+                    }
+                    &:last-child {
+                        border-bottom: 1px solid $border_color_EB;
+                    }
+                }
+                .status {
+                    width: 106px;
+                }
+                .product-name {
+                    width: calc(100% - 649px);
+                    min-width: 120px;
+                }
+                .product-image {
+                    width: 180px;
+                    img{
+                        max-height: 116px;
+                        width: 132px;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .product-price{
+                    width: 95px;
+                }
+                .duplication{
+                    width: 80px;
+                    .btn-copy {
+                        @include action_button('yellow');
+                        padding: 0 7px;
+                    }
+                }
+                .edit {
+                    width: 114px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    .btn-edit {
+                        @include action_button('blue-light',null,null,9px)
+                    }
+                    .btn-view {
+                        @include action_button('green-light')
+                    }
+                }
+                .delete {
+                    width: 74px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    .btn-delete {
+                        @include action_button('gray-light')
+                    }
+                }
+            }
+        }
+    }
+}
+.data-pagination {
+    height: 60px;
+    display: none;
+    .info {
+        @include font_style(12px,
+        $black_9E,
+        400,
+        57px);
+    }
+    .pagination {
+            border-radius: 4px;
+            border: 1px solid $border_color_EB;
+            .pagination-item {
+                height: 29px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-right: 1px solid $border_color_EB;
+                &:last-child {
+                    border-right: 0;
+                }
+                .pagination-link {
+                    text-decoration: none;
+                    @include font_style(12px,$black_9E,400,17px);
+                    padding: 0;
+                    height: 27px;
+                    width: 38px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    transition: all ease-in-out .30s;
+                    &:hover {
+                        background-color: #F9F9F9;
+                    }
+                    &.active {
+                        background-color: #F9F9F9;
+                        cursor: auto;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    nav {
+        .pagination {
+            border-radius: 4px;
+            border: 1px solid $border_color_EB;
+            .page-item {
+                height: 29px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-right: 1px solid $border_color_EB;
+                &:last-child {
+                    border-right: 0;
+                }
+                &.active {
+                    background-color: #F9F9F9;
+                    .page-link {
+                        background-color: #F9F9F9;
+                        border: 1px solid #dee2e6;
+                    }
+                }
+                .page-link {
+                    padding: 0 13px;
+                    text-decoration: none;
+                    @include font_style(12px,$black_9E,400,36px);
+                    transition: all ease-in-out .30s;
+                    &:hover {
+                        background-color: #F9F9F9;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        .box-content {
+            &.mt-20 {
+                margin-top: 10px;
+            }
+            .page-title {
+                height: 40px;
+                padding-left: 14px;
+                h1 {
+                    @include font_style(18px, $black_55, 400, 24px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    padding: 14px;
+                    .form-group {
+                        label {
+                            @include font_style(12px);
+                            display: flex;
+                            align-items: flex-start;
+                        }
+                        .field-section {
+                            .from-date {
+                                span {
+                                    @include font_style(12px);
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        @include font_style(14px);
+                                        margin-bottom: 12px;
+                                    }
+                                    button {
+                                        height: 30px;
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                            .to-date {
+                                span {
+                                    @include font_style(12px);
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        @include font_style(14px);
+                                        margin-bottom: 12px;
+                                    }
+                                    button {
+                                        height: 30px;
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .form-submission {
+                    padding: 20px 26px;
+                    border-top: 1px solid $border_color_EB;
+                    .btn-clear {
+                        @include clear_button(null, 20px);
+                    }
+                    .btn-submit {
+                        @include submit_button();
+                    }
+                }
+            }
+            .search-info-block {
+                padding: 0 14px 0 14px;
+                h2 {
+                    @include font_style(12px);
+                }
+            }
+            .data-container {
+                padding: 0 14px;
+                .data-block {
+                    padding:  14px;
+                    @include font_style(12px);
+                    &.data-row {
+                        @include font_style(12px);
+                        padding: 8px 14px;
+                        line-height: 25px;
+                    }
+                    .status {
+                        width: 106px;
+                    }
+                    .product-id {
+                        width: 111px;
+                    }
+                    .product-name {
+                        width: calc(100% - 796px);
+                        min-width: 120px;
+                    }
+                    .product-image {
+                        width: 180px;
+                        img{
+                            max-height: 72px;
+                            width: 82px;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                    .product-price{
+                        width: 95px;
+                    }
+                    .duplication{
+                        width: 108px;
+                        .btn-copy {
+                            @include action_button('yellow');
+                            padding: 0 7px;
+                        }
+                    }
+                    .edit {
+                        width: 114px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        .btn-edit {
+                            @include action_button('blue-light',null,null,9px)
+                        }
+                        .btn-view {
+                            @include action_button('green-light')
+                        }
+                    }
+                    .delete {
+                        width: 82px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        .btn-delete {
+                            @include action_button('gray-light')
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .form-block {
+                .form-content {
+                    .form-group {
+                        .field-section {
+                            &.custom-with {
+                                width: auto;
+                                flex-wrap: wrap;
+                            }
+                            width: 100%;
+                            select, input {
+                                width: 100%;
+                            }
+                            .number {
+                                width: 100%;
+                            }
+                            .from-date {
+                                .gj-datepicker {
+                                    input {
+                                        width: 85%;
+                                    }
+                                }
+                            }
+                            .to-date {
+                                span {
+                                    @include font_style(12px);
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: 85%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .form-submission {
+                    padding: 20px 26px;
+                    border-top: 1px solid $border_color_EB;
+                    .btn-clear {
+                        @include clear_button(null, 20px);
+                    }
+                    .btn-submit {
+                        @include submit_button();
+                    }
+                }
+            }
+            .search-info-block {
+                padding: 0 14px 0 14px;
+                h2 {
+                    @include font_style(12px);
+                }
+            }
+            .data-container {
+                padding: 0 14px;
+                .data-block {
+                    padding:  14px;
+                    @include font_style(12px);
+                    &.data-row {
+                        @include font_style(12px);
+                        padding: 8px 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .inner-content {
+        margin-left: 10px;
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            @include box_shadow_small;
+            &.mt-20 {
+                margin-top: 6px;
+            }
+            .page-title {
+                height: 34px;
+                padding-left: 10px;
+                h1 {
+                    @include font_style(13px);
+                }
+            }
+            hr {
+                margin: 10px 0;
+            }
+            .form-block {
+                .form-content {
+                    padding: 10px;
+                    .form-group {
+                        margin-bottom: 10px;
+                        flex-direction: column;
+                        label {
+                            @include font_style(12px);
+                            margin-bottom: 6px;
+                        }
+                        .label-section {
+                            width: 100%;
+                        }
+                        .field-section {
+                            &.custom-with {
+                                width: 100%;
+                            }
+                            select {
+                               width: 100%;
+                            }
+                            .number {
+                                width: 100%;
+                            }
+                            .from-date {
+                                .from-span {
+                                    width: 32px;
+                                    @include font_style(12px);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: auto;
+                                        @include font_style(12px);
+                                        border: 1px solid $black_BD;
+                                    }
+                                    button {
+                                        padding: 0;
+                                        height: 30px;
+                                    }
+                                }
+                            }
+                            .to-date {
+                                .to-span {
+                                    width: 32px;
+                                    @include font_style(12px);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: auto;
+                                        @include font_style(12px);
+                                        border: 1px solid $black_BD;
+                                        margin-bottom: 0;
+                                    }
+                                    button {
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                        .custom-checkbox {
+                            width: 50%;
+                        }
+                    }
+                }
+                .form-submission {
+                    padding: 16px;
+                    border-top: 1px solid $border_color_EB;
+                    .btn-clear {
+                        @include clear_button(null, 12px, null, null, 32px);
+                    }
+                    .btn-submit {
+                        @include submit_button(null, null, null, null, 32px);
+                    }
+                }
+            }
+            .search-info-block {
+                padding: 10px 12px;
+                flex-direction: column;
+                height: auto;
+                h2 {
+                    @include font_style(12px);
+                    padding-bottom: 10px;
+                    line-height: 15px;
+                    display: flex;
+                    justify-content: center;
+                }
+                .sort-block {
+                    width: 139px;
+                    background-image: url('../../../image/sort-down.svg');
+                    background-repeat: no-repeat;
+                    background-position: right 10px center;
+                    -webkit-appearance: none;
+                    margin-top: 10px;
+                }
+            }
+            .data-container {
+                padding: 10px 10px 0 10px;
+                .sp {
+                    display: none !important;
+                }
+                .data-block {
+                    height: auto;
+                    width: 100%;
+                    @include font_style(14px,
+                    $black_55,
+                    400,
+                    36px);
+                    &.data-row {
+                        @include font_style(12px);
+                        padding: 10px;
+                        height: 100%;
+                        flex-wrap: wrap;
+                        border-top: none;
+                        line-height: 34px;
+                        &:last-child {
+                            border: none;
+                        }
+                    }
+                    .status {
+                        width: 100%;
+                    }
+                    .product-name {
+                        width: 100%;
+                    }
+                    .product-image {
+                        width: 100%;
+                        img{
+                            max-height: 72px;
+                            width: 82px;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                    .product-price{
+                        width: 100%;
+                    }
+                    .duplication {
+                        width: auto;
+                        padding-right: 10px;
+                    }
+                    .edit {
+                        width: auto;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        margin-right: 10px;
+                        .btn-edit {
+                            @include action_button('green',null,null,9px);
+                            margin-bottom: 0;
+                            margin-right: 10px;
+                        }
+                        .btn-view {
+                            @include action_button('light-blue')
+                        }
+                    }
+                    .delete {
+                        width: auto;
+                        margin-right: 10px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .btn-delete {
+                            @include action_button('red')
+                        }
+                    }
+                }
+                .data-pagination {
+                    height: auto;
+                    flex-direction: column;
+                    padding: 10px 0;
+                    border-top: 1px solid $border_color_EB;
+                    margin: 0 -10px;
+                    .info {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

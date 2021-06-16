@@ -1,0 +1,189 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        @include box_shadow_small;
+        &.mt-20 {
+            margin-top: 20px;
+        }
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+        }
+        .user-role-selection {
+            padding: 20px;
+            .name {
+                @include font_style(14px, $black_55, 400, 18px);
+                margin-bottom: 6px;
+            }
+            .custom-select {
+                width: 50%;
+            }
+        }
+        .user-permission-block {
+            display: flex;
+            padding: 20px 0;
+            margin: 0 20px;
+            justify-content: flex-end;
+            height: 40px;
+            align-items: center;
+            border-top: 1px solid $border_color_EB;
+            border-bottom: 1px solid $border_color_EB;
+            &.list {
+                border-top: 0;
+                .module, .view, .add, .edit, .delete, .all {
+                    font-weight: 400;
+                }
+            }
+            .module, .view, .add, .edit, .delete, .all {
+                width: 10%;
+                display: flex;
+                align-items: center;
+                text-transform: capitalize;
+                @include font_style(14px, $black_55, 600, 18px);
+                .custom-control-label {
+                    padding-top: 4px;
+                }
+                .sp-span {
+                    display: none;
+                }
+                input {
+                    margin-right: 4px;
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+            .module {
+                margin-right: auto;
+                width: 50%;
+            }
+            .block-data {
+                padding-bottom: 26px;
+            }
+            .all-check-block {
+                padding-bottom: 5px;
+            }
+        }
+        .btn-submit {
+            @include submit_button();
+            margin: 40px 0 0;
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 40px;
+                padding-left: 14px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+        }
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 34px;
+                padding: 10px;
+                h1 {
+                    @include font_style(13px);
+                }
+            }
+            .sp {
+                display: none;
+            }
+            .user-permission-block {
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: start;
+                height: auto;
+                padding: 10px 0;
+                margin: 0 10px;
+                .module { 
+                    width: 100%;
+                    padding-bottom: 5px;
+                    font-size: 10px;
+                }
+                .block-data {
+                    padding-bottom: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 25%;
+                    padding: 0;
+                    height: 60px;
+                    flex-direction: column;
+                    label {
+                        display: flex;
+                        width: 18px;
+                        height: 18px;
+                        padding-left: 0px;
+                        margin-left: 46px;
+                    }
+                }
+                .view, .add, .edit{
+                    width: auto;
+                    .sp-span {
+                        display: flex;
+                        font-size: 10px;
+                    }
+                    input {
+                        height: 15px;
+                        width: 15px;
+                    }
+                }
+                .delete {
+                    width: auto;
+                    .sp-span {
+                        display: flex;
+                        font-size: 10px;
+                    }
+                    input {
+                        height: 15px;
+                        width: 15px;
+                    }
+                }
+                .sp {
+                    display: none;
+                }
+            }
+        }
+    }
+}

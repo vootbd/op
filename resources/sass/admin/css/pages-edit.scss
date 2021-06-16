@@ -1,0 +1,773 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.inner-content {
+    width: 100%;
+    margin-left: 20px;
+    .box-content {
+        background-color: $white;
+        .page-title {
+            height: 70px;
+            border-bottom: 20px solid $white_F6;
+            padding-left: 20px;
+            h1 {
+                @include font_style(16px, $black_55, 400, 0);
+            }
+        }
+        .btn-check-url.update {
+            display: none;
+        }
+        .box-inner-content {
+            display: flex;   
+            background-color: $white_F6;
+            .form-block {
+                margin: 0 0 5px 0;
+                width: 100%;
+                display: flex;
+                .inner-form {
+                    background-color: $white;
+                    width: 67%;
+                    border-right: 18px solid $white;
+                    padding-bottom: 37px;
+                    hr {
+                        margin: 20px 0 5px;
+                    }
+                    .form-content {
+                        padding: 20px 0 0 20px;
+                        .form-group {
+                            margin-bottom: 15px;
+                            label {
+                                @include font_style(14px, $black_33, 400, 20px);
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .label-section {
+                                width: 184px;
+                                height: 34px;
+                            }
+                            .field-section {
+                                input,
+                                select {
+                                    width: 100%;
+                                }
+                                textarea {
+                                    height: 134px;
+                                }
+                                .xl-textarea {
+                                    height: 630px;
+                                }
+                                .url-input {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    span {
+                                        color: $green_20;
+                                        width: auto;
+                                        font-size: 14px;
+                                    }
+                                    input {
+                                        margin-left: 10px;
+                                        width: calc(100% - 310px);
+                                    }
+                                    .btn-url-map {
+                                        border: 0;
+                                        @include submit_button(null,auto,null,10px,34px,68px);
+                                    }
+                                    .btn-check-url {
+                                        border: 0;
+                                        @include submit_button(null,auto,null,10px,34px,224px);
+                                    }
+                                }
+                                .url_map {
+                                    margin-left: 261px;
+                                }
+                                .url-error {
+                                    margin-left: 184px;
+                                }
+                            }
+                        }
+                    }
+                    .form-submission {
+                        padding: 0 0 122px 204px;
+                        .btn-submit {
+                            width: 130px;
+                        }
+                    }
+                }
+                .right-sidebar {
+                    width: 33%;
+                    .publish-content {
+                        background-color: $white;
+                        margin-bottom: 15px;
+                        border-left:20px solid $white_F6;
+                        .publish-header {
+                            display: flex;
+                            align-items: center;
+                            padding: 0 15px;
+                            height: 43px;
+                            span {
+                                @include font_style(13px, null, 500);
+                            }
+                        }
+                        .publish-body {
+                            padding: 10px 15px 35px 15px;
+                            border-top: 1px solid $border_color_EB;
+                            .publication-date {
+                                display: flex;
+                                align-items: center;
+                                padding-top: 10px;
+                                justify-content: space-between;
+                                label {
+                                    width: 140px;
+                                }
+                                button {
+                                    padding: 0px 20px;
+                                    @include font_style(14px, $black_33);
+                                    background-color: $white;
+                                    border: 1px solid $border_color_EB;
+                                    border-radius: 3px;
+                                    height: 34px;
+                                    margin-left: auto;
+                                    order: 2;
+                                    margin-top: -60px;
+                                } 
+                            }
+                            select {
+                                margin-bottom: 30px;
+                            }
+                            ul {
+                                list-style-type: none;
+                                padding-inline-start: 0;
+                                li {
+                                    padding: 1px 0 0 0;
+                                    .fa {
+                                        &:hover {
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                                .inner-ul {
+                                    padding-left: 30px;
+                                }
+                            }
+                            .publish-label {
+                                margin: 0 0 10px 0;
+                                @include font_style(13px, $black);
+                            }
+                            .publish {
+                                margin-bottom: 30px;
+                            }
+                            .directory {
+                                padding-top: 10px;
+                                .directory-text {
+                                    align-items: center;
+                                    justify-content: space-between;
+                                }
+                                .directory-section {
+                                    border: 1px solid $border_color_EB;
+                                    .directory-ul {
+                                        li {
+                                            .custom-radio {
+                                                display: block;
+                                                position: relative;
+                                                padding-left: 40px;
+                                                cursor: pointer;
+                                                -webkit-user-select: none;
+                                                -moz-user-select: none;
+                                                -ms-user-select: none;
+                                                user-select: none;
+                                                @include font_style(14px, $black_75, 400, 20px);
+                                            }
+                                            input {
+                                                position: absolute;
+                                                width: 30px;
+                                                opacity: 0;
+                                                cursor: pointer;
+                                                &:checked {
+                                                    ~ {
+                                                        .checkmark {
+                                                            background-color: $blue_4B;
+                                                        }
+                                                        .checkmark::after {
+                                                            display: block;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .checkmark {
+                                                position: absolute;
+                                                top: 2px;
+                                                left: 10px;
+                                                height: 20px;
+                                                width: 20px;
+                                                background-color: #eee;
+                                                border-radius: 50%;
+                                                &:after {
+                                                    content: "";
+                                                    position: absolute;
+                                                    display: none;
+                                                }
+                                            }
+                                            .checkmark::after {
+                                                top: 6px;
+                                                left: 6px;
+                                                width: 8px;
+                                                height: 8px;
+                                                border-radius: 50%;
+                                                background: white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .directory-change {
+                                margin: 10px 0px 30px 0px;
+                                .btn {
+                                    background-color: #fff;
+                                    @include font_style(14px, $green_20);
+                                    border: none;
+                                }
+                            }
+                            .submit-section {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 12px 0 0;
+                                button {
+                                    padding: 0 20px;
+                                    @include font_style(14px, $white);
+                                    background-color: $green_20;
+                                    border: 0;
+                                    border-radius: 3px;
+                                    height: 34px;
+                                    margin-left: auto;
+                                    order: 2;
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            .mt-20 {
+                margin-top: 0 !important;
+            }
+            .page-title {
+                height: 70px;
+                border-bottom: 20px solid $white_F6;
+                padding-left: 16px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .box-inner-content {
+                display: flex;
+                background-color: $white_F6;
+                .form-block {
+                    margin: 0 0 5px 0;
+                    width: 100%;
+                    display: flex;
+                    .inner-form {
+                        width: 67%;
+                        //margin-right: 18px;
+                        padding-bottom: 37px;
+                        hr {
+                            margin: 20px 0 5px;
+                        }
+                        .form-content {
+                            padding: 20px 0 0 20px;
+                            .form-group {
+                                margin-bottom: 15px;
+                                label {
+                                    @include font_style(14px, $black_33, 400, 20px);
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                                .label-section {
+                                    width: 184px;
+                                    height: 34px;
+                                }
+                                .field-section {
+                                    input,
+                                    select {
+                                        width: 100%;
+                                    }
+                                    textarea {
+                                        height: 114px;
+                                    }
+                                    .xl-textarea {
+                                        height: 495px;
+                                    }
+                                    .url-input {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        span {
+                                            color: $green_20;
+                                            width: auto;
+                                            font-size: 14px;
+                                        }
+                                        input {
+                                            margin-left: 10px;
+                                            width: calc(100% - 310px);
+                                        }
+                                        .btn-url-map {
+                                            border: 0;
+                                            @include submit_button(null,auto,null,10px,34px,68px);
+                                        }
+                                        .btn-check-url {
+                                            border: 0;
+                                            @include submit_button(null,auto,null,10px,30px,379px);
+                                        }
+                                    }
+                                    .url-error {
+                                        margin-left: 184px;
+                                    }
+                                }
+                            }
+                        }
+                        .form-submission {
+                            padding: 0 0 122px 204px;
+                            .btn-submit {
+                                width: 130px;
+                            }
+                        }
+                    }
+                    .right-sidebar {
+                        width: 33%;
+                        .publish-content {
+                            margin-bottom: 0px;
+                            .publish-header {
+                                display: flex;
+                                align-items: center;
+                                padding: 0 15px;
+                                height: 43px;
+                                border-bottom: 1px solid $border_color_EB;
+                                span {
+                                    @include font_style(13px, null, 500);
+                                }
+                            }
+                            .publish-body {
+                                padding: 10px 15px 35px 15px;
+                                .publication-date {
+                                    display: flex;
+                                    align-items: center;
+                                    padding-top: 10px;
+                                    justify-content: space-between;
+                                    label {
+                                        width: 140px;
+                                    }
+                                    button {
+                                        padding: 0px 20px;
+                                        @include font_style(14px, $black_33);
+                                        background-color: $white;
+                                        border: 1px solid $border_color_EB;
+                                        border-radius: 3px;
+                                        height: 30px; 
+                                        margin-left: auto;
+                                        order: 2;
+                                        margin-top: -60px;
+                                    } 
+                                }
+                                .publish-date-icon {
+                                    .gj-datepicker button {
+                                        height: 30px !important;
+                                    }
+                                }
+                                select {
+                                    margin-bottom: 25px;
+                                }
+                                .publish {
+                                    margin-bottom: 25px;
+                                }
+                                .directory {
+                                    padding-top: 10px;
+                                    .directory-text {
+                                        align-items: center;
+                                        justify-content: space-between;
+                                    }
+                                }
+                                .directory-change {
+                                    margin: 10px 0px 25px 0px;
+                                    .btn {
+                                        background-color: #fff;
+                                        @include font_style(14px, $green_20);
+                                        border: none;
+                                    }
+                                }
+                            }
+                            .publish-label {
+                                margin: 0 0 10px 0;
+                                @include font_style(13px, $black);
+                            }
+                            .submit-section {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 12px 0 0;
+                                button {
+                                    padding: 0 20px;
+                                    @include font_style(14px, $white);
+                                    background-color: $blue_00;
+                                    border: 0;
+                                    border-radius: 3px;
+                                    height: 34px;
+                                    margin-left: auto;
+                                    order: 2;
+                                }
+                                ul {
+                                    list-style-type: none;
+                                    padding-inline-start: 0;
+                                    li {
+                                        padding: 5px 0 0 0;
+                                        .fa {
+                                            &:hover {
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
+                                    .inner-ul {
+                                        padding-left: 30px;
+                                    }
+                                }
+                                .publish-label {
+                                    margin: 0 0 10px 0;
+                                    @include font_style(13px, $black);
+                                }
+                                .submit-section {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding: 12px 0 0;
+                                    button {
+                                        padding: 8px 20px;
+                                        @include font_style(14px, $white);
+                                        background-color: $blue_00;
+                                        border: 0;
+                                        border-radius: 3px;
+                                        margin-left: auto;
+                                        order: 2;
+                                    }  
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .box-inner-content {
+                .form-block {
+                    .form-content {
+                        .form-group {
+                            label {
+                                @include font_style(12px);
+                            }
+                            .field-section {
+                                input,
+                                textarea,
+                                select {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+
+@media screen and (max-width: 640px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 36px;
+                border-bottom: 1px solid $border_color_EB;
+                padding-left: 10px;
+                h1 {
+                    @include font_style(13px, $black_55, 400, 0);
+                }
+            }
+            .box-inner-content {
+                display: flex;
+                background-color: $white;
+                .form-block {
+                    margin: 0 0 5px 0;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    display: flex;
+                    .inner-form {
+                        width: 100%;
+                        margin-right: 0;
+                        padding-bottom: 0;
+                        hr {
+                            margin: 20px 0;
+                        }
+                        .form-content {
+                            .form-group {
+                                margin-bottom: 8px;
+                                label {
+                                    @include font_style(12px, $black_33, 400, 20px);
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                                .label-section {
+                                    width: 100%;
+                                    height: 30px;
+                                }
+                                .field-section {
+                                    .url-error {
+                                        margin-left: 0;
+                                    }
+                                    input,
+                                    select {
+                                        width: 100%;
+                                    }
+                                    textarea {
+                                        height: 114px;
+                                        width: 100%;
+                                    }
+                                    .xl-textarea {
+                                        height: 395px;
+                                    }
+                                    .url-input {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        flex-direction: row;
+                                        flex-wrap: wrap;
+                                        span {
+                                            color: $green_20;
+                                            width: 100%;
+                                            font-size: 14px;
+                                            margin-bottom: 10px;
+                                        }
+                                        input {
+                                            margin-left: 0;
+                                            width: 61%
+                                        }
+                                        .btn-check-url {
+                                            border: 0;
+                                            @include submit_button(null,null,null,0,30px,35%);
+                                        }
+                                        .btn-check-url {
+                                            border: 0;
+                                            @include submit_button(null,null,null,10px,30px,35%);
+                                        }
+                                    }
+                                    .url_map {
+                                        margin-left: 0;
+                                    }
+                                    .latidude {
+                                        display: flex;
+                                        flex-direction: column;
+                                        label {
+                                            height: 34px;
+                                            width: 150px;
+                                        }
+                                        input {
+                                            &:nth-of-type(1) {
+                                                margin-right: 47px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .form-submission {
+                            padding: 0 0 122px 204px;
+                            .btn-submit {
+                                width: 130px;
+                            }
+                        }
+                    }
+                    .right-sidebar {
+                        padding: 0px;
+                        width: 100%;
+                        border-top: 10px solid $white_F6;
+                        ;
+                        .publish-content {
+                            border-left:0px;
+                            .publish-header {
+                                display: flex;
+                                align-items: center;
+                                padding: 0 15px;
+                                height: 43px;
+                                border-bottom: 1px solid $border_color_EB;
+                                border-bottom: 0;
+                                span {
+                                    @include font_style(12px, null, 500);
+                                }
+                            }
+                            .publish-body {
+                                padding: 10px 15px 35px 15px;
+                                .publication-date {
+                                    padding-top: 10px;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    button {
+                                        padding: 0px 20px;
+                                        @include font_style(14px, $black_33);
+                                        background-color: $white;
+                                        border: 1px solid $border_color_EB;
+                                        border-radius: 3px;
+                                        height: 26px;
+                                        margin-left: auto;
+                                        order: 2; 
+                                        margin-top: -48px;
+                                    } 
+                                }
+                                ul {
+                                    list-style-type: none;
+                                    padding-inline-start: 0;
+                                    li {
+                                        padding: 5px 0 0 0;
+                                    }
+                                    .inner-ul {
+                                        padding-left: 30px;
+                                    }
+                                }
+                                .publish-label {
+                                    margin: 0 0 5px 0;
+                                    @include font_style(12px, $black);
+                                }
+                                title {
+                                    margin-bottom: 20px;
+                                }
+                                .publish {
+                                    margin-bottom: 20px;
+                                }
+                                .directory {
+                                    padding-top: 10px;
+                                    .directory-text {
+                                        align-items: center;
+                                        justify-content: space-between;
+                                    }
+                                    .directory-section {
+                                        border: 1px solid $border_color_EB;
+                                        .directory-ul {
+                                            li {
+                                                .custom-radio {
+                                                    display: block;
+                                                    position: relative;
+                                                    padding-left: 40px;
+                                                    cursor: pointer;
+                                                    -webkit-user-select: none;
+                                                    -moz-user-select: none;
+                                                    -ms-user-select: none;
+                                                    user-select: none;
+                                                    @include font_style(12px, $black_75, 400, 20px);
+                                                }
+                                                input {
+                                                    position: absolute;
+                                                    width: 30px;
+                                                    opacity: 0;
+                                                    cursor: pointer;
+                                                    &:checked {
+                                                        ~ {
+                                                            .checkmark {
+                                                                background-color: $blue_4B;
+                                                            }
+                                                            .checkmark::after {
+                                                                display: block;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                .checkmark {
+                                                    position: absolute;
+                                                    top: 2px;
+                                                    left: 10px;
+                                                    height: 20px;
+                                                    width: 20px;
+                                                    background-color: #eee;
+                                                    border-radius: 50%;
+                                                    &:after {
+                                                        content: "";
+                                                        position: absolute;
+                                                        display: none;
+                                                    }
+                                                }
+                                                .checkmark::after {
+                                                    top: 6px;
+                                                    left: 6px;
+                                                    width: 8px;
+                                                    height: 8px;
+                                                    border-radius: 50%;
+                                                    background: white;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .directory-change {
+                                    margin: 8px 0px 20px 0px;
+                                    .btn {
+                                        background-color: #fff;
+                                        @include font_style(12px, $green_20);
+                                        border: none;
+                                    }
+                                }
+                                .submit-section {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding: 12px 0 10px 0;
+                                    button {
+                                        padding: 0 20px;
+                                        @include font_style(12px, $white);
+                                        //background-color: $blue_00;
+                                        border: 0;
+                                        border-radius: 3px;
+                                        height: 30px;
+                                        margin-left: auto;
+                                        order: 2;
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

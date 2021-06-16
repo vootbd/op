@@ -1,0 +1,388 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.company-name-error {
+    @include font_style(14px,$red)
+}
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        @include box_shadow_small;
+        &.mt-20 {
+            margin-top: 20px;
+        }
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+        }
+        .form-block {
+            .form-content {
+                padding: 20px 20px 6px 20px;
+                hr {
+                    margin: 20px -20px 20px;
+                }
+                .form-group {
+                    margin-bottom: 14px;
+                    label {
+                        @include font_style(14px, $black_75, 400, 20px);
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .producer {
+                        @include single-select-arrow();
+                    }
+                    .label-section {
+                        width: 175px;
+                        height: 34px;
+                    }
+                    .contact-info-block {
+                        flex-direction: column;
+                        .sub-contact {
+                            //justify-content: space-between;
+                            @include font_style(14px, $black_75);
+                            p {
+                                &.bold {
+                                    @include font_style(14px, $black_75, 700);
+                                }
+                                &.fix-width {
+                                    width: 200px;
+                                    justify-content: space-between;
+                                }
+                            }
+                        }
+                        hr {
+                            width: 511px;
+                            margin: 16px 0px 16px 0px;
+                        }
+                        .contact-input {
+                            flex-direction: column;
+                            flex-wrap: wrap;
+                            input {
+                                width: 311px;
+                            }
+                        }
+                    }
+                    .field-section {
+                        .status{
+                            background: $blue_7A;
+                            height: 21px;
+                            width: 62px;
+                            border-radius: 3px;
+                            margin-left: 14px;
+                            @include font_style(12px, $white);
+                            display: inline-block;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            cursor: pointer;
+                        }
+                        .csv-settings-option {
+                            height: 246px;
+                            option {
+                                padding: 10px;
+                                display: block;
+                                color: $black_75;
+                                margin-left: -10px;
+                                margin-right: -10px;
+                            }
+                            option:hover {
+                                background-color: $white_F2;
+                            }
+                        }
+                        #button-localvendor-delete{
+                            background-color: red;
+                        }
+
+                        #append-data{
+                            display: block !important;
+                            h5{
+                              @include font_style(14px, $black);
+                              background-color: $border_color_EB;
+                              padding: 8px 0 8px 10px;
+                              margin-bottom: 10px;
+                            }
+                            .remote-island-data-block{
+                              margin-bottom: 10px;
+                              background-color: $blue_7A;
+                              margin-right: 10px;
+                              border: none;
+                              border-radius: 5px;
+                              color: $white;
+                            }
+                        }
+                        .remove-text-block{
+                            cursor: pointer;
+                            display:block;
+                            color: $green_20;
+                            font-size: 14px;
+                        }
+                        .btn.btn-submit{
+                            color: $white;
+                            margin: 10px;
+                            background-color: $green_20;
+                            margin-right: 10px;
+                            border: none;
+                            border-radius: 5px;
+                            height: 33px;
+                        }
+                        .error_msg.description{
+                            height: 25px;
+                        }
+                        [class^="prefecture_"],
+                        [class*="prefecture_"]  { 
+                            display: inline !important;
+                        }
+                        .island-info {
+                            a {
+                                @include font_style(14px, $black_75, 400, 20px);
+                                padding-top: 13px;
+                                i {
+                                    font-size: 20px;
+                                    padding-right: 8px;
+                                }
+                            }
+                        }
+                        input, textarea, select {
+                           width: 509px;
+                        }
+                        .description {
+                            height: 134px;
+                        }
+                        .select2-selection__rendered {
+                            line-height: 31px !important;
+                            .select2-selection__clear{
+                                display: none;
+                            }
+                        }
+                        .select2-container .select2-selection--single {
+                            height: 34px !important;
+                            @include font_style(14px, $black_9E, 400, 20px);
+                        }
+                        .select2-selection__arrow {
+                            height: 34px !important;
+                            @include font_style(14px, $black_9E, 400, 20px);
+                        }
+                        .select2-container--default .select2-selection--single .select2-selection__rendered{
+                            @include font_style(14px, $black_9E, 400, 20px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 40px;
+                padding-left: 14px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    padding: 14px;
+                    hr {
+                        margin: 12px -12px 12px;
+                    }
+                    .form-group {
+                        margin-bottom: 12px;
+                        label {
+                            @include font_style(12px);
+                        }
+                        .contact-info-block {
+                            flex-direction: column;
+                            .sub-contact {
+                                //justify-content: space-between;
+                                @include font_style(12px, $black_75);
+                                p {
+                                    &.bold {
+                                        @include font_style(12px, $black_75, 500);
+                                    }
+                                    &.fix-width {
+                                        width: 100px;
+                                        justify-content: space-between;
+                                    }
+                                }
+                            }
+                            hr {
+                                width: 309px;
+                                margin: 16px 0px 16px 0px;
+                            }
+                            .contact-input {
+                                flex-direction: column;
+                                flex-wrap: wrap;
+                                input {
+                                    width: 209px;
+                                }
+                            }
+                        }
+                        .field-section {
+                            input, textarea, select {
+                                width: 309px;
+                            }
+                            .island-info {
+                                a {
+                                    @include font_style(12px);
+                                    padding-top: 12px;
+                                    i {
+                                        font-size: 20px;
+                                        padding-right: 8px;
+                                    }
+                                }
+                            }
+                            .description {
+                                height: 120px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    .form-group {
+                        margin-bottom: 12px;
+                        label {
+                            @include font_style(12px);
+                        }
+                        .field-section {
+                            width: 100%;
+                            input, textarea, select {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 34px;
+                padding: 10px;
+                h1 {
+                    @include font_style(13px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    hr {
+                        margin: 10px -10px 10px;
+                    }
+                    padding: 10px;
+                    .form-group {
+                        margin-bottom: 10px;
+                        flex-direction: column;
+                        label {
+                            padding-bottom: 4px;
+                            @include font_style(12px);
+                        }
+                        .label-section {
+                            width: 100%;
+                            .required-span {
+                                margin-bottom: 4px;
+                            }
+                        }
+                        .contact-info-block {
+                            flex-direction: column;
+                            .sub-contact {
+                                @include font_style(12px, $black_75);
+                                p {
+                                    &.bold {
+                                        @include font_style(12px, $black_75, 500);
+                                    }
+                                    &.fix-width {
+                                        width: 100px;
+                                        justify-content: space-between;
+                                    }
+                                }
+                            }
+                            hr {
+                                width: 100%;
+                                margin: 10px 0px 10px 0px;
+                            }
+                            .contact-input {
+                                flex-direction: column;
+                                flex-wrap: wrap;
+                                input {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        .field-section {
+                            width: 100%;
+                            input, textarea ,select{
+                               width: 100%;
+                            }
+                            .island-info {
+                                a {
+                                    @include font_style(12px);
+                                    padding-top: 10px;
+                                    i {
+                                        font-size: 18px;
+                                        padding-right: 5px;
+                                    }
+                                }
+                            }
+                            .description {
+                                height: 80px;
+                            }
+                            .select2-selection__rendered {
+                                line-height: 31px !important;
+                            }
+                            .select2-container .select2-selection--single {
+                                height: 30px !important;
+                                @include font_style(12px, $black_9E, 400, 20px);
+                            }
+                            .select2-selection__arrow {
+                                height: 30px !important;
+                                @include font_style(12px, $black_9E, 400, 20px);
+                            }
+                            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                                @include font_style(12px, $black_9E, 400, 20px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

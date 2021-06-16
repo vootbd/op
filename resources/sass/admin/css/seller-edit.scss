@@ -1,0 +1,314 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        @include box_shadow_small;
+        &.mt-20 {
+            margin-top: 20px;
+        }
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+        }
+        .form-content {
+            padding: 20px 20px 0 20px;
+            hr {
+                margin: 20px -20px 20px;
+            }
+            .form-group {
+                margin-bottom: 14px;
+                label {
+                    @include font_style(14px, $black_75, 400, 20px);
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    display: flex;
+                    align-items: center;
+                }
+                .label-section {
+                    width: 175px;
+                }
+                .field-section {
+                    width: calc(100% - 175px);
+                    input, textarea {
+                        width: 509px;
+                    }
+                    .remote-iland {
+                        width: 509px;
+                        @include single-select-arrow();
+                    }
+                    p{
+                        @include font_style(14px, $black_75, 400, 20px);
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .status{
+                        background: $blue_7A;
+                        height: 19px;
+                        width: 62px;
+                        border-radius: 3px;
+                        margin-left: 14px;
+                        @include font_style(10px, $white);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .description{
+                        height: 134px;
+                    }
+                }
+                .contact-info-block {
+                    flex-direction: column;
+                    .sub-contact {
+                        //justify-content: space-between;
+                        @include font_style(14px, $black_75);
+                        p {
+                            &.bold {
+                                @include font_style(14px, $black_75, 700);
+                            }
+                            &.fix-width {
+                                width: 200px;
+                                justify-content: space-between;
+                            }
+                        }
+                    }
+                    hr {
+                        width: 511px;
+                        margin: 16px 0px 16px 0px;
+                    }
+                    .contact-input {
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        input {
+                            width: 311px;
+                        }
+                    }
+                }
+            }
+            .form-submission {
+                margin: 0 -20px;
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 40px;
+                padding-left: 12px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .form-content {
+                padding: 12px 12px 0 12px;
+                hr {
+                    margin: 12px -12px 12px;
+                }
+                .form-group {
+                    margin-bottom: 14px;
+                    label {
+                        @include font_style(12px);
+                    }
+                    .label-section {
+                        width: 175px;
+                    }
+                    .contact-info-block {
+                        flex-direction: column;
+                        .sub-contact {
+                            //justify-content: space-between;
+                            @include font_style(12px, $black_75);
+                            p {
+                                &.bold {
+                                    @include font_style(12px, $black_75, 500);
+                                }
+                                &.fix-width {
+                                    width: 100px;
+                                    justify-content: space-between;
+                                }
+                            }
+                        }
+                        hr {
+                            width: 309px;
+                            margin: 16px 0px 16px 0px;
+                        }
+                        .contact-input {
+                            flex-direction: column;
+                            flex-wrap: wrap;
+                            input {
+                                width: 209px;
+                            }
+                        }
+                    }
+                    .field-section {
+                        width: calc(100% - 175px);
+                        input, textarea {
+                            width: 309px;
+                        }
+                        .remote-iland {
+                            width: 309px;
+                        }
+                        p{
+                            @include font_style(12px);
+                        }
+                        .description {
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+            .form-submission {
+                margin: 0 -12px !important;
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 40px;
+                padding-left: 12px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .form-content {
+                padding: 12px 12px 0 12px;
+                hr {
+                    margin: 12px -12px 12px;
+                }
+                .form-group {
+                    margin-bottom: 14px;
+                    label {
+                        @include font_style(12px);
+                    }
+                    .label-section {
+                        width: 175px;
+                    }
+                    .field-section {
+                        width: calc(100% - 175px);
+                        input, textarea {
+                            width: 100%;
+                        }
+                        .remote-iland {
+                            width: 100%;
+                        }
+                        p{
+                            @include font_style(12px);
+                        }
+                    }
+                }
+            }
+            .form-submission {
+                margin: 0 -12px !important;
+            }
+        }
+    }
+}
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .inner-content {
+        .box-content {
+            &.mt-20 {
+                margin-top: 6px;
+            }
+            .page-title {
+                height: 35px;
+                padding-left: 10px;
+                h1 {
+                    @include font_style(12px);
+                }
+            }
+            .form-content {
+                padding: 10px 10px 0 10px;
+                hr {
+                    margin: 10px -10px 10px;
+                }
+                .form-group {
+                    flex-direction: column;
+                    margin-bottom: 10px;
+                    label {
+                        @include font_style(12px);
+                    }
+                    .label-section {
+                        width: 100%;
+                        margin-bottom: 6px;
+                    }
+                    .contact-info-block {
+                        flex-direction: column;
+                        .sub-contact {
+                            @include font_style(12px, $black_75);
+                            p {
+                                &.bold {
+                                    @include font_style(12px, $black_75, 500);
+                                }
+                                &.fix-width {
+                                    width: 100px;
+                                    justify-content: space-between;
+                                }
+                            }
+                        }
+                        hr {
+                            width: 100%;
+                            margin: 10px 0px 10px 0px;
+                        }
+                        .contact-input {
+                            flex-direction: column;
+                            flex-wrap: wrap;
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .field-section {
+                        width: 100%;
+                        input, textarea {
+                            width: 100%;
+                        }
+                        .remote-iland {
+                            width: 100%;
+                        }
+                        p {
+                            @include font_style(12px);
+                        }
+                        .description {
+                            height: 80px;
+                        }
+                    }
+                }
+                .form-submission {
+                    padding: 18px;
+                    margin: 0 -10px 0;
+                }
+            }
+            .form-submission {
+                margin: 0 -10px !important;
+            }
+        }
+    }
+}

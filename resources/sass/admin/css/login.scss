@@ -1,0 +1,121 @@
+@import "./_variables.scss";
+@import "./_mixins.scss";
+
+.login-block {
+    width: 410px;
+    height: 452px;
+    margin-top: 142px;
+    margin-bottom: 140px;
+    .logo-block {
+        height: 73px;
+        img {
+            height: 39px;
+        }
+    }
+    .form-block {
+        .form-group {
+            margin-bottom: 16px;
+        }
+        background-color: $white;
+        box-shadow: 0 0 10px #dee2e6;
+        padding: 35px 45px;
+        .input-label {
+            @include font_style(16px, $black_75, 400, 20px);
+            margin-bottom: 6px;
+        }
+        .btn-submit {
+            @include auth_button();
+            margin-top: 5px;
+        }
+        .forgot-password {
+            img {
+                height: 19px;
+                width: 19px;
+                background: $black_9E;
+                border-radius: 999px;
+            }
+            span {
+                padding-left: 5px;
+                @include font_style(14px, $black_75, 400, 20px);
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .login-block {
+        height: 472px;
+        margin-top: 120px;
+        .logo-block {
+            height: 56px;
+            img {
+                height: 31px;
+            }
+        }
+        .form-block {
+            .input-label {
+                @include font_style(14px)
+            }
+            .btn-submit {
+                @include auth_button(40px);
+                @include font_style(16px);
+            }
+        }
+        .forgot-password {
+            span {
+               font-size: 12px !important;
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 767px
+==================================================*/
+@media screen and (max-width: 767px) {
+    .login-block {
+        height: auto;
+        margin-top: 41px;
+        width: 100%;
+        max-width: 292px;
+        margin-bottom: 120px;
+        .logo-block {
+            height: 56px;
+            img {
+                height: 26px;
+            }
+        }
+        .form-block {
+            padding: 25px 22px;
+            .input-label {
+                @include font_style(12px)
+            }
+            .btn-submit {
+                @include auth_button(40px);
+                @include font_style(16px);
+            }
+        }
+        .forgot-password {
+            span {
+               font-size: 9px !important;
+            }
+        }
+    }
+}
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 600px
+==================================================*/
+@media only screen and (max-width: 320px) and (orientation: landscape),
+  only screen and (max-width: 700px) and (orientation: landscape) {
+    .login-block {
+        margin-top: 20px;
+    }
+}

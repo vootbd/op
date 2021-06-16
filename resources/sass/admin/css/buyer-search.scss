@@ -1,0 +1,1102 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        @include box_shadow_small;
+        &.mt-20 {
+            margin-top: 20px;
+        }
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding: 0 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+            .text-search-block {
+                display: none;
+                align-items: center;
+                width: 100%;
+                p {
+                    @include font_style(14px, $black_55, 400, 20px);
+                    padding-left: 20px;
+                    padding-right: 38px;
+                }
+                h2 {
+                    @include font_style(14px, $black_55, 400, 20px);
+                }
+                .custom-select {
+                    width: 140px;
+                    margin-left: auto;
+                }
+            }
+        }
+        .form-block {
+            .form-content {
+                padding: 20px 20px 6px 20px;
+                h1 {
+                    @include font_style(14px, $black_75, 400, 20px);
+                    margin-bottom: 20px;
+                }
+                .form-group {
+                    margin-bottom: 16px;
+                    label {
+                        @include font_style(14px, $black_75, 400, 20px);
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .range-label {
+                        label {
+                            margin-bottom: 20px;
+                        }
+                    }
+                    .label-section {
+                        width: 175px;
+                    }
+                    .field-section {
+                        &.custom-with {
+                            width: calc(100% - 340px);
+                            flex-wrap: wrap;
+                        }
+                        #block-keyword {
+                            display: none;
+                            .keyword-delete {
+                                height: 25px;
+                                width: 79px;
+                                @include action_button('red');
+                                margin-left: 20px;
+                                cursor: pointer;
+                            }
+                        }
+                        input {
+                           width: 327px;
+                        }
+                        span {
+                            @include font_style(14px, $black_9E);
+                        }
+                        .category, .island {
+                            width: 327px;
+                            @include single-select-arrow();
+                        }
+                        .from-date {
+                            span {
+                                width: 50px;
+                                @include font_style(14px, $black_9E);
+                                height: 34px;
+                            }
+                            .gj-datepicker {
+                                input {
+                                    width: 289px;
+                                    @include font_style(14px, $black_9E);
+                                    border: 1px solid $black_BD;
+                                    margin-bottom: 13px;
+                                }
+                                button {
+                                    padding: 0;
+                                    height: 34px;
+                                    border: 1px solid $black_BD;
+                                    i {
+                                        color: $black_9E;
+                                    }
+                                }
+                            }
+                        }
+                        .to-date {
+                            span {
+                                width: 50px;
+                                @include font_style(14px, $black_9E);
+                                height: 34px;
+                            }
+                            .gj-datepicker {
+                                input {
+                                    width: 289px;
+                                    @include font_style(14px, $black_9E);
+                                    border: 1px solid $black_BD;
+                                }
+                                button {
+                                    padding: 0;
+                                    height: 34px;
+                                    border: 1px solid $black_BD;
+                                    i {
+                                        color: $black_9E;
+                                    }
+                                }
+                            }
+                        }
+                        .range-block {
+                            .js-irs-0 {
+                                width: 509px;
+                                margin-bottom: 12px;
+                            }
+                            .irs {
+                                .irs-bar {
+                                    background: #56C7DE;
+                                    border:none;
+                                    height: 8px;
+                                }
+                                .irs-handle {
+                                    background: #2094AC;
+                                    border: none;
+                                    box-shadow: none;
+                                    height: 24px;
+                                    width: 24px;
+                                }
+                                .irs-min, .irs-max, .irs-from, .irs-to {
+                                    display: none;
+                                }
+                                .irs-line {
+                                    background-color: #f2f2f2;
+                                    border-radius: 4px;
+                                    border: none;
+                                    height: 8px;
+                                }
+                            }
+                        }
+                        span{
+                            @include font_style(14px);
+                        }
+                        .number-search{
+                            width: 142px;
+                        }
+                        .rangeslide-block{
+                            input{
+                                width: 142px;
+                                margin-right: 5px;
+                            }
+                            .rangeslider-input-s{
+                                margin-left: 30px;
+                            }
+                            span{
+                                @include font_style(14px, $black_75);
+                            }
+                        }
+                        .select2-selection__rendered {
+                            line-height: 31px !important;
+                        }
+                        .select2-container .select2-selection--single {
+                            height: 34px !important;
+                            @include font_style(14px, $black_9E, 400, 20px);
+                        }
+                        .select2-selection__arrow {
+                            height: 34px !important;
+                            @include font_style(14px, $black_9E, 400, 20px);
+                        }
+                        .select2-container--default .select2-selection--single .select2-selection__rendered{
+                            @include font_style(14px, $black_9E, 400, 20px);
+                        }
+                    }
+                    .custom-checkbox {
+                        padding-right: 0;
+                        width: 160px;
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                    }
+                    select {
+                        width: 142px;
+                    }
+                }
+            }
+        }
+        #searchPageTitle {
+            display: flex;
+        }
+        .search-info-block {
+            height: 58px;
+            border-bottom: 1px solid $border_color_EB;
+            padding: 0 40px;
+            display: none;
+            h2 {
+                @include font_style(14px, $black_9E, 400, 20px);
+            }
+            .sort-block {
+                width: 139px;
+                background-image: url('../../../image/sort-down.svg');
+                background-repeat: no-repeat;
+                background-position: right 10px center;
+                -webkit-appearance: none;
+            }
+            .data-pagination {
+                height: 30px;
+                .info {
+                    @include font_style(12px,
+                    $black_9E,
+                    400,
+                    57px);
+                }
+                .pagination {
+                    border-radius: 4px;
+                    border: 1px solid $border_color_EB;
+                    .pagination-item {
+                        height: 29px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-right: 1px solid $border_color_EB;
+                        &:last-child {
+                            border-right: 0;
+                        }
+                        .pagination-link {
+                            padding: 0 13px;
+                            text-decoration: none;
+                            @include font_style(12px,$black_9E,400,17px);
+                            transition: all ease-in-out .30s;
+                        }
+                        &:hover, &.active {
+                            background-color: #F9F9F9;
+                        }
+                    }
+                }
+            }
+        }
+        .data-container {
+            padding: 0 10px 16px;
+            #data-table {
+                .no-data {
+                    padding: 40px 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    text-align: center;
+                    @include font_style(14px, #e69191, 400, 20px);
+                }
+            }
+            .data-block {
+                padding: 30px 0 0;
+                @include font_style(14px,
+                $black_55,
+                400,
+                36px);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                    .product-block {
+                        padding-left: 0;
+                        padding-right: 0;
+                        margin-bottom: 30px;
+                        .product-image-block {
+                            background-color: $white_F6;
+                            height: auto;
+                            margin: 0 30px;
+                            .product-image {
+                                height: 163px;
+                                display: block;
+                                position: relative;
+                                img {
+                                    height: 163px;
+                                    object-fit: cover;
+                                    object-position: center;
+                                    width: 100%;
+                                }
+                                .new {
+                                    position: absolute;
+                                    margin: 6px;
+                                    @include font_style(14px,$white);
+                                    background: $red;
+                                    padding: 0px;
+                                    width: 55px;
+                                    text-align: center;
+                                    border-radius: 2px;
+                                    line-height: 22px;
+                                    height: 24px;
+                                    left: 0;
+                                }
+                            }
+                        }
+                    }
+                    .description {
+                        padding: 16px 20px 0px 16px;
+                        a {
+                            @include font_style(14px,
+                            $black_55,
+                            400,
+                            18.8px);
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;  
+                            overflow: hidden;
+                            height: 36px;
+                        }
+                    }
+                    .ammount {
+                        padding: 16px 20px 18px 16px;
+                        p {
+                            @include font_style(14px,
+                            $black_55,
+                            400,
+                            18.8px);
+                        }
+                    }
+                //}
+            }
+            .data-pagination {
+                height: 60px;
+                margin: 0 30px;
+                border-top: 1px solid #E4E4E4;
+                .info {
+                    @include font_style(12px,
+                    $black_9E,
+                    400,
+                    57px);
+                }
+                .pagination {
+                    border-radius: 4px;
+                    border: 1px solid $border_color_EB;
+                    .pagination-item {
+                        height: 29px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-right: 1px solid $border_color_EB;
+                        &:last-child {
+                            border-right: 0;
+                        }
+                        .pagination-link {
+                            padding: 0 13px;
+                            text-decoration: none;
+                            @include font_style(12px,$black_9E,400,17px);
+                            transition: all ease-in-out .30s;
+                        }
+                        &:hover, &.active {
+                            background-color: #F9F9F9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        margin-left: 12px;
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            @include box_shadow_small;
+            &.mt-20 {
+                margin-top: 12px;
+            }
+            .page-title {
+                height: 40px;
+                padding-left: 12px;
+                h1 {
+                    @include font_style(12px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    padding: 12px 12px 0 12px;
+                    h1 {
+                        @include font_style(12px);
+                        margin-bottom: 12px;
+                    }
+                    .form-group {
+                        margin-bottom: 12px;
+                        label {
+                            @include font_style(12px);
+                        }
+                        .range-label {
+                            label {
+                                margin-bottom: 12px;
+                            }
+                        }
+                        .label-section {
+                            width: 175px;
+                        }
+                        .field-section {
+                            &.custom-with {
+                                width: calc(100% - 340px);
+                                flex-wrap: wrap;
+                            }
+                            input {
+                               width: 327px;
+                            }
+                            span {
+                                @include font_style(12px, $black_9E);
+                            }
+                            .category {
+                                width: 327px;
+                                @include single-select-arrow();
+                            }
+                            .from-date {
+                                span {
+                                    width: 50px;
+                                    @include font_style(12px, $black_9E);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: 289px;
+                                        @include font_style(12px, $black_9E);
+                                        margin-bottom: 13px;
+                                    }
+                                    button {
+                                        padding: 0;
+                                        height: 30px;
+                                        i {
+                                            color: $black_9E;
+                                        }
+                                    }
+                                }
+                            }
+                            .to-date {
+                                span {
+                                    width: 50px;
+                                    @include font_style(12px, $black_9E);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: 289px;
+                                        @include font_style(12px, $black_9E);
+                                        border: 1px solid $black_BD;
+                                    }
+                                    button {
+                                        padding: 0;
+                                        height: 30px;
+                                        border: 1px solid $black_BD;
+                                        i {
+                                            color: $black_9E;
+                                        }
+                                    }
+                                }
+                            }
+                            .range-block {
+                                .js-irs-0 {
+                                    width: 509px;
+                                    margin-bottom: 12px;
+                                }
+                                .irs {
+                                    .irs-bar {
+                                        background: #56C7DE;
+                                        border:none;
+                                    }
+                                    .irs-handle {
+                                        background: #2094AC;
+                                        border: none;
+                                        box-shadow: none;
+                                    }
+                                    .irs-min, .irs-max, .irs-from, .irs-to {
+                                        display: none;
+                                    }
+                                    .irs-line {
+                                        background-color: #f2f2f2;
+                                        border-radius: 4px;
+                                        border: none;
+                                    }
+                                }
+                            }
+                            span{
+                                @include font_style(12px);
+                            }
+                            .number-search{
+                                width: 142px;
+                            }
+                            .rangeslide-block{
+                                input{
+                                    width: 142px;
+                                    margin-right: 5px;
+                                }
+                                .rangeslider-input-s{
+                                    margin-left: 30px;
+                                }
+                                span{
+                                    @include font_style(12px, $black_75);
+                                }
+                            }
+                        }
+                        .custom-checkbox {
+                            padding-right: 0;
+                            width: 160px;
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                        select {
+                            width: 142px;
+                        }
+                    }
+                }
+            }
+            .data-container {
+                padding: 0 20px 16px;
+                .data-block {
+                    padding: 30px 20px 0;
+                    @include font_style(12px,
+                    $black_55,
+                    400,
+                    36px);
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    // .card-box {
+                    //     width: 186px;
+                    //     height: 262px;
+                    //     margin-bottom: 40px;
+                        .product-image {
+                            background-color: $white_F6;
+                            width: 186px;
+                            height: 262px;
+                            img {
+                                max-height: 163px;
+                                width: 186px;
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                            .new {
+                                position: absolute;
+                                margin: 6px;
+                                @include font_style(12px,$white);
+                                background: $red;
+                                padding: 0px;
+                                width: 55px;
+                                text-align: center;
+                                border-radius: 2px;
+                                line-height: 22px;
+                                height: 24px;
+                            }
+                        }
+                        .description {
+                            padding: 16px 20px 0px 16px;
+                            p {
+                                @include font_style(12px,
+                                $black_55,
+                                400,
+                                18.8px);
+                            }
+                        }
+                        .ammount {
+                            padding: 16px 20px 0px 16px;
+                            p {
+                                @include font_style(12px,
+                                $black_55,
+                                400,
+                                18.8px);
+                            }
+                        }
+                    //}
+                }
+                .data-pagination {
+                    height: 60px;
+                    .info {
+                        @include font_style(12px,
+                        $black_9E,
+                        400,
+                        57px);
+                    }
+                    .pagination {
+                        border-radius: 4px;
+                        border: 1px solid $border_color_EB;
+                        .pagination-item {
+                            height: 29px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-right: 1px solid $border_color_EB;
+                            &:last-child {
+                                border-right: 0;
+                            }
+                            .pagination-link {
+                                padding: 0 13px;
+                                text-decoration: none;
+                                @include font_style(12px,$black_9E,400,17px);
+                                transition: all ease-in-out .30s;
+                            }
+                            &:hover, &.active {
+                                background-color: #F9F9F9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: auto;
+                .text-search-block { 
+                    flex-wrap: wrap;
+                }
+            }
+            .form-block {
+                .form-content {
+                    .form-group {
+                        .label-section {
+                            width: 175px;
+                        }
+                        .field-section {
+                            width: 100%;
+                            &.custom-with {
+                                width: 100%;
+                                flex-wrap: wrap;
+                            }
+                            input {
+                                width: 100%;
+                            }
+                            .category, .island {
+                                width: 100%;
+                                @include single-select-arrow();
+                            }
+                            .from-date {
+                                span {
+                                    width: 50px;
+                                    @include font_style(12px, $black_9E);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: 85%;
+                                        @include font_style(12px, $black_9E);
+                                        margin-bottom: 13px;
+                                    }
+                                    button {
+                                        padding: 0;
+                                        height: 30px;
+                                        i {
+                                            color: $black_9E;
+                                        }
+                                    }
+                                }
+                            }
+                            .to-date {
+                                span {
+                                    width: 50px;
+                                    @include font_style(12px, $black_9E);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: 85%;
+                                        @include font_style(12px, $black_9E);
+                                        border: 1px solid $black_BD;
+                                    }
+                                    button {
+                                        padding: 0;
+                                        height: 30px;
+                                        border: 1px solid $black_BD;
+                                        i {
+                                            color: $black_9E;
+                                        }
+                                    }
+                                }
+                            }
+                            .range-block {
+                                .js-irs-0 {
+                                    width: 100%;
+                                    margin-bottom: 12px;
+                                }
+                                .irs {
+                                    .irs-bar {
+                                        background: #56C7DE;
+                                        border:none;
+                                    }
+                                    .irs-handle {
+                                        background: #2094AC;
+                                        border: none;
+                                        box-shadow: none;
+                                    }
+                                    .irs-min, .irs-max, .irs-from, .irs-to {
+                                        display: none;
+                                    }
+                                    .irs-line {
+                                        background-color: #f2f2f2;
+                                        border-radius: 4px;
+                                        border: none;
+                                    }
+                                }
+                            }
+                            span{
+                                @include font_style(12px);
+                            }
+                            .number-search{
+                                width: 50%;
+                            }
+                            .rangeslide-block{
+                                input{
+                                    width: 100%;
+                                    margin-right: 5px;
+                                }
+                                .rangeslider-input-s{
+                                    margin-left: 30px;
+                                }
+                                span{
+                                    @include font_style(12px, $black_75);
+                                }
+                            }
+                        }
+                        .custom-checkbox {
+                            padding-right: 0;
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                        select {
+                            width: 142px;
+                        }
+                    }
+                }
+            }
+            .data-container {
+                padding: 0 20px 16px;
+                .data-block {
+                    padding: 30px 20px 0;
+                    @include font_style(12px,
+                    $black_55,
+                    400,
+                    36px);
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                        .product-image {
+                            background-color: $white_F6;
+                            width: 186px;
+                            height: 262px;
+                            img {
+                                max-height: 163px;
+                                width: 186px;
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                            .new {
+                                position: absolute;
+                                margin: 6px;
+                                @include font_style(12px,$white);
+                                background: $red;
+                                padding: 0px;
+                                width: 55px;
+                                text-align: center;
+                                border-radius: 2px;
+                                line-height: 22px;
+                                height: 24px;
+                            }
+                        }
+                        .description {
+                            padding: 16px 20px 0px 16px;
+                            p {
+                                @include font_style(12px,
+                                $black_55,
+                                400,
+                                18.8px);
+                            }
+                        }
+                        .ammount {
+                            padding: 16px 20px 0px 16px;
+                            p {
+                                @include font_style(12px,
+                                $black_55,
+                                400,
+                                18.8px);
+                            }
+                        }
+                    //}
+                }
+                .data-pagination {
+                    height: 60px;
+                    .info {
+                        @include font_style(12px,
+                        $black_9E,
+                        400,
+                        57px);
+                    }
+                    .pagination {
+                        border-radius: 4px;
+                        border: 1px solid $border_color_EB;
+                        .pagination-item {
+                            height: 29px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-right: 1px solid $border_color_EB;
+                            &:last-child {
+                                border-right: 0;
+                            }
+                            .pagination-link {
+                                padding: 0 13px;
+                                text-decoration: none;
+                                @include font_style(12px,$black_9E,400,17px);
+                                transition: all ease-in-out .30s;
+                            }
+                            &:hover, &.active {
+                                background-color: #F9F9F9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .inner-content {
+        margin-left: 10px;
+        width: 100%;
+        .box-content {
+            .page-title {
+                height: auto;
+                padding: 10px;
+                h1 {
+                    @include font_style(12px);
+                }
+                .text-search-block {
+                    h2, p {
+                        @include font_style(12px);
+                    }
+                    .custom-select {
+                        margin-left: initial;
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .form-block {
+                .form-content {
+                    padding: 10px 10px 0 10px;
+                    h1 {
+                        @include font_style(12px);
+                        margin-bottom: 12px;
+                    }
+                    .form-group {
+                        margin-bottom: 10px;
+                        flex-direction: column;
+                        label {
+                            @include font_style(12px);
+                        }
+                        .range-label {
+                            label {
+                                margin-bottom: 12px;
+                            }
+                        }
+                        .label-section {
+                            width: 100%;
+                            margin-bottom: 6px;
+                        }
+                        .field-section {
+                            &.custom-with {
+                                width: 100%;
+                                flex-wrap: wrap;
+                            }
+                            input {
+                               width: 100%;
+                            }
+                            span {
+                                @include font_style(12px, $black_9E);
+                            }
+                            .category, .island {
+                                width: 100%;
+                            }
+                            .from-date {
+                                .from-span {
+                                    width: 32px;
+                                    @include font_style(12px);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: auto;
+                                        @include font_style(12px);
+                                        border: 1px solid $black_BD;
+                                    }
+                                    button {
+                                        padding: 0;
+                                        height: 30px;
+                                    }
+                                }
+                            }
+                            .to-date {
+                                .to-span {
+                                    width: 32px;
+                                    @include font_style(12px);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: auto;
+                                        @include font_style(12px);
+                                        border: 1px solid $black_BD;
+                                        margin-bottom: 0;
+                                    }
+                                    button {
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                            .range-block {
+                                .irs--big {
+                                    margin-top: -40px;
+                                }
+                                .js-irs-0 {
+                                    width: 100%;
+                                    margin-bottom: 12px;
+                                }
+                                .irs {
+                                    .irs-bar {
+                                        background: #56C7DE;
+                                        border:none;
+                                    }
+                                    .irs-handle {
+                                        background: #2094AC;
+                                        border: none;
+                                        box-shadow: none;
+                                        top: 27px;
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+                                    .irs-min, .irs-max, .irs-from, .irs-to {
+                                        display: none;
+                                    }
+                                    .irs-line {
+                                        background-color: #f2f2f2;
+                                        border-radius: 4px;
+                                        border: none;
+                                    }
+                                }
+                            }
+                            span{
+                                @include font_style(12px);
+                            }
+                            .number-search{
+                                width: 92%;
+                            }
+                            .rangeslide-block{
+                                input{
+                                    width: 100%;
+                                    margin-right: 5px;
+                                }
+                                .rangeslider-input-s{
+                                    margin-left: 10px;
+                                    width: 85%;
+                                }
+                                span{
+                                    @include font_style(12px, $black_75);
+                                }
+                            }
+                            .select2-selection__rendered {
+                                line-height: 31px !important;
+                            }
+                            .select2-container .select2-selection--single {
+                                height: 30px !important;
+                                @include font_style(12px, $black_9E, 400, 20px);
+                            }
+                            .select2-selection__arrow {
+                                height: 30px !important;
+                                @include font_style(12px, $black_9E, 400, 20px);
+                            }
+                            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                                @include font_style(12px, $black_9E, 400, 20px);
+                            }
+                        }
+                        .custom-checkbox {
+                            padding-right: 0;
+                            width: 50%;
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                        select {
+                            width: 142px;
+                        }
+                    }
+                }
+            }
+            .data-container {
+                padding: 0 0 10px;
+                .data-block {
+                    padding: 20px 10px 0;
+                    @include font_style(12px,
+                    $black_55,
+                    400,
+                    36px);
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    .product-block {
+                        padding-left: 0;
+                        padding-right: 0;
+                        margin-bottom: 30px;
+                        .product-image-block {
+                            background-color: $white_F6;
+                            height: auto;
+                            margin: 0 30px;
+                            .product-image {
+                                height: 163px;
+                                display: block;
+                                position: relative;
+                                width: 100%;
+                                img {
+                                    height: 163px;
+                                    object-fit: cover;
+                                    object-position: center;
+                                    width: 100%;
+                                }
+                                .new {
+                                    position: absolute;
+                                    margin: 6px;
+                                    @include font_style(14px,$white);
+                                    background: $red;
+                                    padding: 0px;
+                                    width: 55px;
+                                    text-align: center;
+                                    border-radius: 2px;
+                                    line-height: 22px;
+                                    height: 24px;
+                                    left: 0;
+                                }
+                            }
+                        }
+                    }
+                        .description {
+                            padding: 10px 10px 0px 10px;
+                            p {
+                                @include font_style(12px,
+                                $black_55,
+                                400,
+                                18.8px);
+                            }
+                        }
+                        .ammount {
+                            padding: 10px 10px 5px 10px;
+                            p {
+                                @include font_style(12px,
+                                $black_55,
+                                400,
+                                18.8px);
+                            }
+                        }
+                    //}
+                }
+                .data-pagination {
+                    height: auto;
+                    flex-direction: column;
+                    padding-top: 10px;
+                    .info {
+                        @include font_style(12px);
+                        line-height: 15px;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        @include box_shadow_small;
+        &.mt-20 {
+            margin-top: 20px;
+        }
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+        }
+        .form-content {
+            padding: 20px;
+            hr {
+                margin: 20px -20px 20px;
+            }
+            .form-group {
+                margin-bottom: 16px;
+                height: 34px;
+                label {
+                    @include font_style(14px, $black_75, 500, 20px);
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                }
+                .number-rows-label{
+                    margin-right: 3px;
+                }
+                .number-rows-label-second{
+                    margin: 0px 12px 0px 27px;
+                }
+                .log-file-section{
+                    .error-log {
+                        width: 309px;
+                        margin-right: 34px;
+                    }
+                }
+                .number-of-rows{
+                    .number-rows{
+                        margin-left: 18px;
+                    }
+                }
+                .submit-setion{
+                    .btn-submit{
+                        @include submit_button();
+                    }
+                }
+            }
+            .error-view-block{
+                width: 956px;
+                height: 637px;
+                padding: 21px;
+                border: 1px solid $border_color_EB;
+                border-radius: 4px;
+                overflow-y: scroll;
+                p{
+                   @include font_style(14px, $black_75,null, 20px);
+                   font-family: Roboto;
+                   padding: 11px 20px;
+                   &:nth-child(2n) {
+                        background-color: $green_E3;
+                    }
+                }
+            }
+        }
+    }
+}

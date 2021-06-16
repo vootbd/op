@@ -1,0 +1,160 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.sidebar {
+    // margin-bottom: 60px;
+    #navbarClose {
+        display: none;
+    }
+    .account-block {
+        width: 295px;
+        background: #fff;
+        padding: 0 20px 13px;
+        margin-bottom: 16px;
+        @include box_shadow_small;
+        .title {
+            border-bottom: 1px solid $border_color_EB;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            line-height: 0;
+            img {
+                height: 20px;
+                &.icon-support {
+                    height: 18px;
+                }
+            }
+            .text {
+                @include font_style(15px, $green_20, 700, 24px);
+                padding-left: 10px;
+            }
+        }
+        .menu-link {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid $border_color_EB;
+            @include font_style(13px, $black_33, 400);
+            text-decoration: none;
+            transition: all ease-in-out .30s;
+            .rito {
+                font-size: 16px;
+                color: $border_color_EB;
+                transition: all ease-in-out .30s;
+            }
+            &:last-child {
+                border-bottom: 0;
+            }
+            &:hover {
+                color: $green_20;
+                .rito {
+                    color: $green_20;
+                }
+            }
+            &.active {
+                color: $green_20;
+                .rito {
+                    color: $green_20;
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .sidebar {
+        .account-block {
+            width: 283px;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        display: none;
+        #navbarClose {
+            display: block;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            font-size: 30px;
+            color: #cccccc;
+        }
+        &.ipad {
+            display: block;
+            position: fixed;
+            margin-bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100vw;
+            background: rgba(33, 37, 41, 0.64);
+            height: 100vh;
+            z-index: 9999;
+            padding: 20px;
+            transition: all ease-in 1s;
+            .account-block {
+                margin-bottom: 0;
+                margin-left: -300px;
+                width: 295px;
+                &.show {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .sidebar {
+        display: none;
+        &.mobile {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            background: #fff;
+            height: 100vh;
+            z-index: 9999;
+            padding-left: 0;
+            overflow-y: scroll;
+            padding-bottom: 100px;
+            .account-block {
+                width: 100%;
+                margin-bottom: 0;
+                box-shadow: none;
+                padding: 4%;
+                border-bottom: 1px solid #e6e5e5;
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+
+}

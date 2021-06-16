@@ -1,0 +1,247 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        .page-title {
+            height: 70px;
+            border-bottom: 20px solid #F6F6F6;
+            padding-left: 20px;
+            h1 {
+                @include font_style(16px, $black_55, 400, 0px);
+            }
+        }
+        .box-inner-content{
+            background-color: $white;
+            hr {
+                margin: 0 20px 5px 20px;
+            }
+            .form-block {
+                .form-content {
+                    padding: 20px 0px 6px 20px;
+                    .form-group {
+                        margin-bottom: 14px;
+                        width: 67%;
+                        label {
+                            @include font_style(14px, $black_75, 400, 20px);
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            display: flex;
+                            align-items: center;
+                        }
+                        .dir-name {
+                            padding-bottom: 10px;
+                        }
+                        .label-section {
+                            width: auto;
+                            padding-right: 10px;
+                            margin-top: 5px;
+                        }
+                        .field-section {
+                            width: 100%;
+                            input{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                .form-submission{
+                    padding: 20px 0 20px 20px;
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 55px;
+                border-bottom: 16px solid #F6F6F6;
+                padding-left: 14px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .box-inner-content{
+                .form-block {
+                    .form-submission{
+                        padding: 10px 0 20px 190px;
+                    }
+                    .form-content {
+                        padding: 15px 20px;
+                        hr {
+                            margin: 12px -12px 12px;
+                        }
+                        .form-group {
+                            margin-bottom: 14px;
+                            width: 67%;
+                            label {
+                                @include font_style(14px, $black_75, 400, 20px);
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .dir-name {
+                                padding-bottom: 10px;
+                            }
+                            .label-section {
+                                width: auto;
+                                padding-right: 10px;
+                            }
+                            .field-section {
+                                width: 100%;
+                                input{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    .form-submission{
+                        padding: 20px 0 20px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 55px;
+                border-bottom: 16px solid #F6F6F6;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .box-inner-content{
+                .form-block {
+                    .form-content {
+                        .form-group {
+                            margin-bottom: 14px;
+                            width: 100%;
+                            label {
+                                @include font_style(12px, $black_75, 400, 20px);
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .dir-name {
+                                padding-bottom: 10px;
+                            }
+                            .label-section {
+                                width: auto;
+                                padding-right: 10px;
+                            }
+                            .field-section {
+                                width: 100%;
+                                input{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    .form-submission{
+                        padding: 20px 0 20px 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 45px;
+                padding: 10px;
+                border-bottom: 10px solid #F6F6F6;
+                h1 {
+                    @include font_style(13px);
+                }
+            }
+            .box-inner-content{
+                hr {
+                    margin: 0 10px 5px 10px;
+                }
+                .form-block {
+                    .form-submission{
+                        padding: 10px 0 20px 10px;
+                    }
+                    .image-details-block{
+                        padding-left: 10px;
+                        .image-text-block {
+                            font-size: 12px;
+                            padding-bottom: 5px;
+                        }
+                        .details-block {
+                            .file{
+                                .file-choose {
+                                    font-size: 10px;
+                                }
+                                span{
+                                    font-size: 12px;
+                                }
+                            }
+                            span{
+                                font-size: 10px;
+                            }
+                        }
+                        .image-block {
+                            a{
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                    .form-content {
+                        hr {
+                            margin: 10px -10px 10px;
+                        }
+                        padding: 10px;
+                        .form-group {
+                            flex-direction: column;
+                            label {
+                                padding-bottom: 4px;
+                                @include font_style(12px);
+                            }
+                            .label-section {
+                                width: 100%;
+                                .required-span {
+                                    margin-bottom: 4px;
+                                }
+                                .col-form-label {
+                                    @include font_style(12px);
+                                }
+                            }
+                            .field-section {
+                                width: 100%;
+                                input, textarea ,select{
+                                   width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

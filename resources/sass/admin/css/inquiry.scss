@@ -1,0 +1,206 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.custom-select {
+  color: #3b4043;
+}
+.inner-content {
+  margin-left: 20px;
+  width: 100%;
+  .box-content {
+    background-color: $white;
+    @include box_shadow_small;
+    &.mt-20 {
+      margin-top: 20px;
+    }
+    .page-title {
+      height: 50px;
+      border-bottom: 1px solid $border_color_EB;
+      padding-left: 20px;
+      h1 {
+        @include font_style(18px, $black_55, 400, 24px);
+      }
+    }
+    .form-block {
+      .form-content {
+        .account-type-text {
+          h4 {
+            @include font_style(14px);
+            margin-bottom: 0px;
+          }
+          p {
+            @include font_style(14px, #3b4043, normal, 100%);
+            padding-top: 15px;
+          }
+          p.inquery-p-2 {
+            @include font_style(12px, #707f89, normal, 100%);
+            padding-top: 15px;
+          }
+        }
+        padding: 20px;
+        hr {
+          margin: 20px -20px 20px;
+        }
+        .form-group {
+          margin-bottom: 14px;
+          label {
+            @include font_style(14px, $black_75, 500, 20px);
+            padding: 0;
+            display: flex;
+            align-items: center;
+          }
+          .account-type {
+            width: 509px;
+            @include single-select-arrow();
+          }
+          .label-section {
+            width: 175px;
+            .confrim-email-span {
+              margin-left: 0px;
+            }
+            .inquiry-span {
+              margin-left: 0px;
+            }
+          }
+          .field-section {
+            width: calc(100% - 175px);
+            input,
+            textarea {
+              width: 509px;
+            }
+            .content-of-inquiry {
+              height: 134px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+  .inner-content {
+    .box-content {
+      .page-title {
+        height: 40px;
+        padding-left: 14px;
+        h1 {
+          @include font_style(14px);
+        }
+      }
+      .form-block {
+        .form-content {
+          padding: 14px;
+          hr {
+            margin: 12px -12px 12px;
+          }
+          .form-group {
+            label {
+              @include font_style(12px);
+            }
+            .mobile-res {
+              flex-direction: row !important;
+            }
+            .field-section {
+              input,
+              textarea,
+              select {
+                width: 309px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+  .inner-content {
+    .box-content {
+      .page-title {
+        h1 {
+          @include font_style(14px);
+        }
+      }
+      .form-block {
+        .form-content {
+          .form-group {
+            label {
+              @include font_style(12px);
+            }
+            .field-section {
+              width: 100%;
+              input,
+              textarea,
+              select {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+  .inner-content {
+    .box-content {
+      .page-title {
+        height: 34px;
+        padding: 10px;
+        h1 {
+          @include font_style(13px);
+        }
+      }
+      .form-block {
+        .form-content {
+          hr {
+            margin: 10px -10px 10px;
+          }
+          padding: 10px;
+          .form-group {
+            flex-direction: column;
+            label {
+              padding-bottom: 4px;
+              @include font_style(12px);
+            }
+            .label-section {
+              width: 100%;
+              flex-direction: row !important;
+              .required-span {
+                margin-bottom: 4px;
+                margin-left: 8px;
+              }
+            }
+            .mobile-res {
+              flex-direction: row !important;
+            }
+            .field-section {
+              width: 100%;
+              input,
+              select {
+                width: 100%;
+              }
+              textarea {
+                width: 100%;
+                height: 80px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

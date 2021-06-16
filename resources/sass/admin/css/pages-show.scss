@@ -1,0 +1,106 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.inner-content {
+    width: 100%;
+    margin-left: 20px;
+    .box-content {
+        background-color: $white;
+        .page-title-top {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(16px, $black_55, 400, 0);
+            }
+        }
+        .box-inner-content {
+            padding-left: 20px;
+            display: flex;   
+            background-color: $white;
+            .page-detail{
+                padding: 20px 0 50px 0;
+                .page-title{
+                    font-size: 22px;
+                    color: #4C4948;
+                    font-weight: 400;
+                    padding-bottom: 20px;
+                }
+                .page-details{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            .mt-20 {
+                margin-top: 0 !important;
+            }
+            .page-title {
+                height: 50px;
+                border-bottom: 1px solid $border_color_EB;
+                padding-left: 16px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .box-inner-content {
+                display: flex;
+                background-color: $white;
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+
+@media screen and (max-width: 640px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 36px;
+                border-bottom: 1px solid $border_color_EB;
+                padding-left: 10px;
+                h1 {
+                    @include font_style(13px, $black_55, 400, 0);
+                }
+            }
+            .box-inner-content {
+                display: flex;
+                background-color: $white;
+            }
+        }
+    }
+}

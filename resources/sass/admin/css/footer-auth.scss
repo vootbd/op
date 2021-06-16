@@ -1,0 +1,34 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.page-footer {
+    height: 75px;
+    background-color: $white;
+    @include box_shadow_small;
+    @include font_style(12px, $black_9E, 400, 24px);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .link {
+        a {
+            color: $black_9E;
+            padding-right: 24px;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+    }
+}
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 767px
+==================================================*/
+@media screen and (max-width: 767px) {
+    .page-footer {
+        height: 60px;
+        font-size: 10px;
+        line-height: 16px;
+    }
+}

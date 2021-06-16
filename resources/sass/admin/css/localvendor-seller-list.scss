@@ -1,0 +1,838 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.mt {
+    margin-top: -30px;
+}
+.link {
+    color: $green_20;
+    &:hover {
+        color: $green_20;
+    }
+}
+.inner-content {
+    width: 100%;
+    margin-left: 20px;
+    hr{
+        border-top: none !important;
+    }
+    .box-content {
+        background-color: $white;
+        &.mt-20 {
+            margin-top: 20px;
+        }
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+        }
+        .form-block {
+            .form-content {
+                padding: 26px;
+                .form-group {  
+                    .custom-checkbox {
+                        padding-right: 0;
+                        width: 170px;
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                    }                 
+                    margin-bottom: 14px;
+                    label {
+                        @include font_style(14px, $black_75, 400, 20px);
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .label-section {
+                        width: 175px;
+                    } 
+                    .field-section {
+                        &.custom-with {
+                            width: calc(100% - 175px);
+                            flex-wrap: wrap;
+                            overflow: hidden;
+                        } 
+                        .keyword{
+                            width: 400px;
+                        }
+                        select {
+                           width: 309px;
+                        }
+                        .number {
+                            width: 142px;
+                        }
+                        .select2-selection__rendered {
+                            line-height: 31px !important;
+                        }
+                        .select2-container .select2-selection--single {
+                            height: 34px !important;
+                            @include font_style(14px, $black_9E, 400, 20px);
+                        }
+                        .select2-selection__arrow {
+                            height: 34px !important;
+                            @include font_style(14px, $black_9E, 400, 20px);
+                            b{
+                                border-color: #BDBDBD transparent transparent transparent !important;   
+                                border-width: 5px 4px 0 4px !important;      
+                                margin-left: -7px !important;   
+                                font-weight: normal !important; 
+                            }
+                        }
+                        .select2-container--default .select2-selection--single .select2-selection__rendered{
+                            @include font_style(14px, $black_9E, 400, 20px);
+                        }
+                        .from-date {
+                            span {
+                                width: 50px;
+                                @include font_style(14px, $black_9E);
+                                height: 34px;
+                            }
+                            .gj-datepicker {
+                                input {
+                                    width: 271px;
+                                    @include font_style(14px, $black_9E);
+                                    border: 1px solid $black_BD;
+                                    margin-bottom: 13px;
+                                }
+                                button {
+                                    padding: 0;
+                                    height: 34px;
+                                    width: 38px;
+                                    border: 1px solid $black_BD;
+                                    i {
+                                        color: $black_9E;
+                                    }
+                                }
+                            }
+                        }
+                        .to-date {
+                            span {
+                                width: 50px;
+                                @include font_style(14px, $black_9E);
+                                height: 34px;
+                            }
+                            .gj-datepicker {
+                                input {
+                                    width: 271px;
+                                    @include font_style(14px, $black_9E);
+                                    border: 1px solid $black_BD;
+                                }
+                                button {
+                                    padding: 0;
+                                    height: 34px;
+                                    width: 38px;
+                                    border: 1px solid $black_BD;
+                                    i {
+                                        color: $black_9E;
+                                    }
+                                }
+                            }
+                        }
+                    }                    
+                }
+            }
+            .form-submission {
+                padding: 20px 26px;
+                border-top: 1px solid $border_color_EB;
+                .btn-clear {
+                    @include clear_button(null, 20px);
+                }
+                .btn-submit {
+                    @include submit_button();
+                }
+            }
+        }
+        .box-inner-content {
+            background-color: $white;
+            .search-content {
+                padding-left: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                span {
+                    @include font_style(14px)
+                }
+                .search {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    padding: 12px 20px;
+                    input {
+                        width:140px;
+                        margin-right: 8px;
+                        border-color: $border_color_EB;
+                    }
+                    .form-submission{
+                        padding: 0 !important;
+                    }
+                    .btn-submit {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        @include font_style(14px,null,400);
+                        background-color: $blue_00;
+                        height: 34px;
+                    }
+                }
+            } 
+            .filter-content {
+                display: flex;
+                flex-direction: column;
+                padding: 0 20px 0 20px;  
+                .top-info{
+                    @include font_style(12px, $black_9E, 400, 40px);
+                }
+                .batch-operation {
+                    display: flex;
+                    padding: 10px 0;
+                    margin-bottom: -100px;
+                    select {
+                        width: 140px;
+                        margin-right: 7px;
+                    }
+                    .form-submission{
+                        padding: 0 !important;
+                    }
+                    .btn-submit {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        @include font_style(14px,null,400);
+                        background-color: $blue_00;
+                        height: 34px;
+                        width: 70px;
+                    }
+                }
+            }
+            .dt {
+                margin: 0px 20px 0 20px; 
+                img{
+                    max-height: 70px;
+                    max-width: 80px;
+                } 
+                .edit-icon{
+                    margin-left: 2%;
+                }
+                table.dataTable.dtr-inline.collapsed {
+                    >tbody {
+                        >tr[role="row"] {
+                            >td {
+                                &:first-child {
+                                    &:before {
+                                        font-size: 16px;
+                                        font-weight: bolder;
+                                        background-color:$green_51;
+                                        line-height: 16px;
+                                    }
+                                }
+                            }
+                        }
+                        >tr.parent {
+                            >td {
+                                &:first-child {
+                                    &:before {
+                                        background-color: $red;
+                                        line-height: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                table {
+                    border-bottom: 1px solid $border_color_EB;
+                    width: 100%;
+                    thead {
+                        @include font_style(14px,$black_55,400);
+                        .sorting-caret {
+                            display: flex;
+                            flex-direction: column;
+                            padding-left: 10px;
+                            .fa {
+                                color: $black_BD;
+                            }
+                            .fa:last-child {
+                                margin-top: -5px;
+                            }
+                        }
+                        .sorting, .sorting_asc, .sorting_desc {
+                            padding-right: 0px;
+                            &::before {
+                                content: none;
+                            }
+                            &::after {
+                                content: none;
+                            }
+                        }
+                        tr {
+                            th {
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                    tbody {
+                        @include font_style(12px,$black_55,400);
+                        .child {
+                            .sorting-caret {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .dataTables_wrapper {
+                    .dataTables_info{
+                        display: inline-block !important;
+                        margin: 20px 0 30px !important;                        
+                    }
+                    .dataTables_empty{
+                        padding-left: 40%;
+                    }
+                    .dataTables_paginate{ 
+                        float: right !important;
+                    }
+                    padding: 0px;
+                    td {
+                        @include font_style(10px); 
+                    }
+                    .row {
+                        &:first-child {
+                            display: none;
+                        }
+                        &:last-child {
+                            .col-sm-12:first-child {
+                                display: none;
+                            }
+                            .col-sm-12:last-child {
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+                #data-table_wrapper {
+                    .row {
+                        .col-sm-12 {
+                            #data-table_paginate {
+                                .pagination { 
+                                    #data-table_first {
+                                        a {
+                                            border: none;
+                                            margin-right: -17px;
+                                        }
+                                    }
+                                    #data-table_previous {
+                                        a {
+                                            border: none;
+                                        }
+                                    }
+                                    #data-table_next {
+                                        a {
+                                            border: none;
+                                        }
+                                    }
+                                    #data-table_last {
+                                        a {
+                                            border: none;
+                                            margin-left: -20px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        .box-content {
+            @media only screen and (max-width: 1279px) {
+                .inner-content {
+                    .box-content {
+                        &.mt-20 {
+                            margin-top: 10px;
+                        }
+                        .page-title {
+                            height: 40px;
+                            padding-left: 14px;
+                            h1 {
+                                @include font_style(18px, $black_55, 400, 24px);
+                            }
+                        }
+                        .form-block {
+                            .form-content {
+                                padding: 14px;
+                                .form-group {
+                                    .custom-checkbox {
+                                        padding-right: 0;
+                                        width: 160px;
+                                        &:last-child {
+                                            padding-right: 0;
+                                        }
+                                    }
+                                    label {
+                                        @include font_style(12px);
+                                        display: flex;
+                                        align-items: flex-start;
+                                    }
+                                    .field-section {  
+                                        &.custom-with {
+                                            width: calc(100% - 340px);
+                                            flex-wrap: wrap;
+                                        }
+                                        .from-date {
+                                            span {
+                                                @include font_style(12px);
+                                            }
+                                            .gj-datepicker {
+                                                input {
+                                                    @include font_style(14px);
+                                                    margin-bottom: 12px;
+                                                }
+                                                button {
+                                                    height: 30px;
+                                                    padding: 0;
+                                                }
+                                            }
+                                        }
+                                        .to-date {
+                                            span {
+                                                @include font_style(12px);
+                                            }
+                                            .gj-datepicker {
+                                                input {
+                                                    @include font_style(14px);
+                                                    margin-bottom: 12px;
+                                                }
+                                                button {
+                                                    height: 30px;
+                                                    padding: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .form-submission {
+                                padding: 20px 26px;
+                                border-top: 1px solid $border_color_EB;
+                                .btn-clear {
+                                    @include clear_button(null, 20px);
+                                }
+                                .btn-submit {
+                                    @include submit_button();
+                                }
+                            }
+                        }  
+                    }
+                }
+            } 
+            .box-inner-content {
+                .search-content {
+                    .search {
+                        .btn-submit {
+                            height: 30px;
+                            @include font_style(12px);
+                        }
+                    }
+                }
+                .filter-content {
+                    .btn-submit {
+                        height: 30px;
+                        @include font_style(12px);
+                    }
+                    .batch-operation{
+                        .btn-submit{
+                            height: 30px;
+                            @include font_style(12px);
+                        }
+                    }
+                } 
+            }
+        }
+    } 
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    .form-group {
+                        .custom-checkbox {
+                            &:last-child {
+                                padding-right: 0;
+                            }
+                        }
+                        .field-section {
+                            &.custom-with {
+                                width: 100%;
+                                flex-wrap: wrap;
+                            }
+                            .keyword{
+                                width: 100%;
+                            }
+                            width: 100%;
+                            select {
+                                width: 100%;
+                            }
+                            .number {
+                                width: 100%;
+                            }
+                            .from-date {
+                                .gj-datepicker {
+                                    input {
+                                        width: 85%;
+                                    }
+                                }
+                            }
+                            .to-date {
+                                span {
+                                    @include font_style(12px);
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: 85%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .form-submission {
+                    padding: 20px 26px;
+                    border-top: 1px solid $border_color_EB;
+                    .btn-clear {
+                        @include clear_button(null, 20px);
+                    }
+                    .btn-submit {
+                        @include submit_button();
+                    }
+                }
+            }
+        }
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .mt {
+        margin-left: 18px;
+    }
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 34px;
+                padding-left: 10px;
+                h1 {
+                    @include font_style(13px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    padding: 10px;
+                    .form-group {
+                        margin-bottom: 10px;
+                        flex-direction: column;
+                        label {
+                            @include font_style(12px);
+                            margin-bottom: 6px;
+                        }
+                        .label-section {
+                            width: 100%;
+                        }
+                        .field-section {
+                            &.custom-with {
+                                width: 100%;
+                                flex-wrap: wrap;
+                                .custom-checkbox {
+                                    width: 50%;
+                                }
+                            }
+                            .select2-selection__rendered {
+                                line-height: 31px !important;
+                            }
+                            .select2-container .select2-selection--single {
+                                height: 30px !important;
+                                @include font_style(12px, $black_9E, 400, 20px);
+                                width: 100% !important;
+                            }
+                            .select2-selection__arrow {
+                                height: 30px !important;
+                                @include font_style(12px, $black_9E, 400, 20px);
+                            }
+                            .select2-container--default .select2-selection--single .select2-selection__rendered{
+                                @include font_style(12px, $black_9E, 400, 20px);
+                            }
+                            select {
+                               width: 100%;
+                            }
+                            .number {
+                                width: 100%;
+                            }
+                            .from-date {
+                                .from-span {
+                                    width: 32px;
+                                    @include font_style(12px);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: auto;
+                                        @include font_style(12px);
+                                        border: 1px solid $black_BD;
+                                    }
+                                    button {
+                                        padding: 0;
+                                        height: 30px;
+                                    }
+                                }
+                            }
+                            .to-date {
+                                .to-span {
+                                    width: 32px;
+                                    @include font_style(12px);
+                                    height: 30px;
+                                }
+                                .gj-datepicker {
+                                    input {
+                                        width: auto;
+                                        @include font_style(12px);
+                                        border: 1px solid $black_BD;
+                                        margin-bottom: 0;
+                                    }
+                                    button {
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .form-submission {
+                    padding: 16px;
+                    border-top: 1px solid $border_color_EB;
+                    .btn-clear {
+                        @include clear_button(null, 12px, null, null, 32px);
+                    }
+                    .btn-submit {
+                        @include submit_button(null, null, null, null, 32px);
+                    }
+                }
+            }
+            .box-inner-content {
+                hr {
+                    margin: 0 10px 12px 10px;
+                }
+                .dt {
+                    margin:0 10px;
+                }
+                .search-content {
+                    padding: 12px 10px;
+                    span {
+                        @include font_style(10px);
+                    }
+                    .search {
+                        padding: 0;
+                        input {
+                            width:100px;
+                        }
+                        .btn-submit {
+                            @include font_style(12px);
+                            padding: 0;
+                            width: 110px;
+                            height: 30px;
+                        }
+                    }
+                }
+                .filter-content {
+                    padding: 0 10px;
+                    .btn-submit {
+                        @include font_style(12px,null,400);
+                        height: 30px;
+                    }
+                    .filter {
+                        p {
+                            @include font_style(12px);
+                            .highlight {
+                                color: $green_20;
+                            }
+                        }
+                    }
+                    .batch-operation {
+                        padding: 10px 0;
+                        margin-bottom: 0px;
+                        .btn-submit {
+                            height: 30px;
+                            @include font_style(12px);
+                        }
+                    }
+                }
+                .dt {
+                    border-top: 1px solid $border_color_EB;
+                    margin: 10px;
+                    table {
+                        border-bottom: 1px solid $border_color_EB;
+                        width: 100%;
+                        thead {
+                            @include font_style(14px,$black_55,400);
+                            .sorting-caret {
+                                display: flex;
+                                flex-direction: column;
+                                padding-left: 10px;
+                                .fa {
+                                    color: $black_BD;
+                                }
+                                .fa:last-child {
+                                    margin-top: -5px;
+                                }
+                                tr th {
+                                    white-space: nowrap;
+                                }
+                            }
+                            .sorting {
+                                &::before {
+                                    content: none;
+                                }
+                                &::after {
+                                    content: none;
+                                }
+                            }
+                            .sorting_asc {
+                                &::before {
+                                    content: none;
+                                }
+                                &::after {
+                                    content: none;
+                                }
+                            }
+                            .sorting_desc {
+                                &::before {
+                                    content: none;
+                                }
+                                &::after {
+                                    content: none;
+                                }
+                            }
+                        }
+                        tbody {
+                            @include font_style(12px,$black_55,400);
+                            tr {
+                                td {
+                                    line-height:40px !important;
+                                    .link {
+                                        color: $green_20;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .dataTables_wrapper {
+                        .dataTables_paginate{
+                            float: none !important;
+                        }
+                        .dataTables_empty{
+                            padding-left: 20%;
+                        }
+                        .dataTables_info{
+                            margin: 20px 0 0px !important;
+                        }
+                        padding: 0px;
+                        .row {
+                            &:first-child {
+                                display: none;
+                            }
+                            &:last-child {
+                                .col-sm-12:first-child {
+                                    display: none;
+                                }
+                                .col-sm-12:last-child {
+                                    display: flex;
+                                }
+                            }
+                        }
+                    }
+                }
+                .dt {
+                    #data-table_wrapper {
+                        .row {
+                            .col-sm-12 {
+                                #data-table_paginate {
+                                    thead tr th {
+                                        white-space: nowrap;
+                                    }
+                                    width: 100%;
+                                    margin: 12px 0 22px !important;
+                                    .pagination {
+                                        flex-wrap: wrap;
+                                        #data-table_first {
+                                            width: 50%;
+                                            justify-content: flex-end;
+                                            margin-bottom: 5px;
+                                            a {
+                                                border: none;
+                                                margin-right: -20px;
+                                            }
+                                        }
+                                        #data-table_previous {
+                                            width: 50%;
+                                            justify-content: flex-start;
+                                            a {
+                                                border: none;
+                                            }
+                                        }
+                                        .page-item {
+                                            margin-bottom: 5px;
+                                        }
+                                        #data-table_next {
+                                            width: 50%;
+                                            justify-content: flex-end;
+                                            a {
+                                                border: none;
+                                                margin-left: -20px;
+                                            }
+                                        }
+                                        #data-table_last {
+                                            width: 50%;
+                                            justify-content: flex-start;
+                                            a {
+                                                border: none;
+                                                margin-left: -20px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .mt-20 {
+        margin-top: 6px !important;
+    }
+}

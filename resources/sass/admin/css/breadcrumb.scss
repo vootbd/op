@@ -1,0 +1,86 @@
+@import "./variables.scss";
+
+.breadcrumb-block {
+    border-top: 1px solid $white_F2;
+    border-bottom: 1px solid $white_F2;
+    background-color: $white;
+    .container-fluid{
+        padding-left: 22px;
+        padding-right: 22px;
+        .breadcrumb {
+            margin-bottom: 0;
+            background-color: $white;
+            font-size: 12px;
+            padding: 0;
+            height: 31px;
+            display: flex;
+            align-items: center;
+            .breadcrumb-item+.breadcrumb-item {
+                padding-left: 6px;
+                display: flex;
+                align-items: center;
+                &.active {
+                    color: $green_20;
+                }
+            }
+            .breadcrumb-item+.breadcrumb-item::before {
+                content: "\e930";
+                font-family: 'Rito' !important;
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                padding-right: 6px;
+                font-size: 16px;
+                -webkit-font-smoothing: antialiased;
+            }
+            .breadcrumb-item {
+                color: $black_9E;
+                a {
+                    color: $black_9E;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    transition: all ease-in-out .30s;
+                    &:hover {
+                        color: $green_20;
+                    }
+                }
+            }
+        }
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: #BDBDBD !important;
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .breadcrumb-block {
+        .container-fluid{
+            padding: 0px 12px 0px 12px;
+            .breadcrumb {
+                height: 27px;
+            }
+        }
+    }
+}
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .breadcrumb-block {
+        .container-fluid{
+            padding: 0px 8px 0px 8px;
+            .breadcrumb {
+                height: 27px;
+            }
+        }
+    }
+}

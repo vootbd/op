@@ -1,0 +1,175 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        @include box_shadow_small;
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+        }
+        .data-table {
+            // padding: 20px;
+            margin-top: 0 !important;
+        }
+    }
+}
+    
+table.dataTable th {
+    white-space: nowrap;
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        margin-left: 20px;
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            @include box_shadow_small;
+            .page-title {
+                height: 50px;
+                border-bottom: 1px solid $border_color_EB;
+                padding-left: 20px;
+                h1 {
+                    @include font_style(18px, $black_55, 400, 24px);
+                }
+            }
+            .data-table {
+                // padding: 20px;
+                margin-top: 0 !important;
+            }
+            .table{
+                td {
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .dataTables_wrapper {
+                table {
+                    .dataTable {
+                        tbody {
+                            tr {
+                                td {
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .data-table {
+                padding: 20px;
+            }
+        }
+    }
+    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+        top: 50%;
+        left: 4px;
+        height: 14px;
+        width: 14px;
+        display: block;
+        position: absolute;
+        color: white;
+        border: 0;
+        border-radius: 14px;
+        box-shadow: none;
+        box-sizing: content-box;
+        text-align: center;
+        text-indent: 0 !important;
+        font-family: 'Courier New', Courier, monospace;
+        line-height: 14px;
+        content: '+';
+        background-color: #51CC81;
+        transform: translateY(-50%);
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    table caption {
+        padding: .5em 0;
+    }
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 34px;
+                padding: 10px;
+                h1 {
+                    @include font_style(13px);
+                }
+            }
+            .data-table {
+                padding: 0px;
+            }
+            .dataTables_wrapper {
+                padding: 0 22px;
+                .row {
+                    .col-sm-12 {
+                        padding-right: 0px;
+                        padding-left: 0px;
+                        .dataTables_paginate {
+                            .pagination {
+                                justify-content: center;
+                                flex-wrap: wrap;
+                            }
+                            .page-item {
+                                .page-link {
+                                    padding: 10px;
+                                }
+                            }
+                            table {
+                                .dataTable {
+                                    thead {
+                                        th {
+                                            padding-right: 0 !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                div {
+                    .dataTables_info {
+                        margin: 10px !important;
+                    }
+                }
+                .dataTables_filter {
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}
+
+.dataTables_wrapper table.dataTable thead th {
+    padding-right: 30px !important;
+}

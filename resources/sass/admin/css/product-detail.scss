@@ -1,0 +1,699 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        @include box_shadow_small;
+        &.mt-20 {
+            margin-top: 20px;
+        }
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+        }
+        .inactive-product {
+            padding: 50px;
+            justify-content: center;
+            font-size: 16px;
+            color: #2094AC;
+            font-weight: 600;
+        }
+        .form-content {
+            padding: 20px 20px 6px 20px;
+            .product-header-block {
+                display: flex;
+                .image-block {
+                    width: 350px;
+                    .swiper-container {
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    .swiper-slide {
+                        background-size: cover;
+                        background-position: center;
+                        height: 294px;
+                        width: 394px;
+                    }
+                    .gallery-thumbs {
+                        box-sizing: border-box;
+                        padding: 10px 0;
+                    }
+                    .gallery-thumbs .swiper-slide {
+                        opacity: 0.4;
+                        height: 53px;
+                        width: 63px;
+                    }
+                    .gallery-thumbs .swiper-slide-thumb-active {
+                        opacity: 1;
+                    }
+                    .images-download {
+                        @include action_button('blue');
+                        height: 32px;
+                        width: 180px;
+                        a {
+                            display: flex;
+                            align-items: center;
+                            @include font_style(12px,#fff,400,18px);
+                            padding: 0;
+                            .rito-image {
+                                font-size: 18px;
+                                padding-right: 6px;
+                            }
+                        }
+                    }
+                    .sp-btn-block {
+                        display: none;
+                    }
+                    .sp-link-block {
+                        display: none;
+                    }
+                }
+                .account-block {
+                    padding-left: 26px;
+                    .button-block {
+                        .btn-new {
+                            @include action_button('white');
+                            @include font_style(14px,$red);
+                            border-width: 2px;
+                            border-style: solid;
+                            border-color: $red;
+                            box-shadow: none;
+                            pointer-events: none;
+                        }
+                        .btn-island {
+                            @include action_button('light-blue');
+                            margin-left: 16px;
+                            box-shadow: none;
+                            pointer-events: none;
+                        }
+                    }
+                    h2 {
+                        @include font_style(34px,$black,400,40px);
+                        margin-top: 23px;
+                    }
+                    .price-block {
+                        width: auto;
+                        margin: 65px 0 42px;
+                        p {
+                            @include font_style(12px,$black_9E,400,20px);
+                            padding-bottom: 4px;
+                        }
+                        .boder-buttom {
+                            border-bottom: 1px solid $black_9E;
+                            width: 62px;
+                        }
+                        div {
+                            border-bottom: 1px solid $black_9E;
+                            width: 100px;
+                        }
+                        .amount {
+                            @include font_style(34px,$red,400,20px);
+                            padding-top: 25px;
+                        }
+                    }
+                    .btn-sample {
+                        @include action_button('blue');
+                        height: 60px;
+                        width: 570px;
+                        @include font_style(24px,null,null,18px);
+                    }
+                    .link-block {
+                        width: 570px;
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 22px;
+                        a {
+                            margin-right: 26px;
+                            @include font_style(14px,$black_9E,400,20px);
+                            .rito-mail {
+                                @include font_style(16px,$green_20);
+                                padding-right: 10px;
+                                
+                            }
+                            .rito-phone-call {
+                                @include font_style(16px,$green_20);
+                                padding-right: 10px;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+            .product-description-bolck {
+                margin-top: 40px;
+                .head-title {
+                    margin-bottom: 27px;
+                    h2 {
+                        @include font_style(18px, null, 400, 24px);
+                    }
+                }
+                .sub-title {
+                    p {
+                        @include font_style(14px,$black_9E,400,20px);
+                        padding-bottom: 28px;
+                    }
+                }
+            }
+            .video-block {
+                height: 390px;
+            }
+            .product-data {
+                margin-bottom: 24px;
+                .label-block {
+                    width: 189px;
+                    @include font_style(14px, $black_75, 400, 20px);
+                }
+                .data-block {
+                    width: auto;
+                    @include font_style(14px, $black_75, 400, 20px);
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: calc(100% - 189px);
+                    .heading {
+                        @include font_style(14px, $black_75, 600, 20px);
+                        width: 100%;
+                    }
+                    span {
+                        width: 180px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        margin-left: 20px;
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            @include box_shadow_small;
+            .page-title {
+                height: 40px;
+                border-bottom: 1px solid $border_color_EB;
+                padding-left: 14px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .form-content {
+                padding: 14px 14px 6px 14px;
+                .product-header-block {
+                    display: flex;
+                    .image-block {
+                        width: 350px;
+                        .swiper-container {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                        .swiper-slide {
+                            background-size: cover;
+                            background-position: center;
+                            height: 294px;
+                            width: 394px;
+                        }
+                        .gallery-thumbs {
+                            box-sizing: border-box;
+                            padding: 10px 0;
+                        }
+                        .gallery-thumbs .swiper-slide {
+                            opacity: 0.4;
+                            height: 53px;
+                            width: 63px;
+                        }
+                        .gallery-thumbs .swiper-slide-thumb-active {
+                            opacity: 1;
+                        }
+                        .images-download {
+                            @include action_button('blue');
+                            height: 32px;
+                            a {
+                                @include font_style(12px,#fff,400,18px);
+                                .rito-image {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                        .btn-block {
+                            display: none;
+                        }
+                        .link-block {
+                            display: none;
+                        }
+                    }
+                    .account-block {
+                        padding-left: 14px;
+                        .button-block {
+                            .btn-new {
+                                @include action_button('white');
+                                @include font_style(12px,$red);
+                                border-width: 2px;
+                                border-style: solid;
+                                border-color: $red;
+                            }
+                            .btn-island {
+                                @include action_button('light-blue');
+                                margin-left: 16px;
+                            }
+                        }
+                        h2 {
+                            @include font_style(18px,$black,400,40px);
+                            margin-top: 23px;
+                        }
+                        .price-block {
+                            width: auto;
+                            margin: 65px 0 49px;
+                            p {
+                                @include font_style(12px,$black_9E,400,20px);
+                                padding-bottom: 4px;
+                            }
+                            .boder-buttom {
+                                border-bottom: 1px solid $black_9E;
+                                width: 62px;
+                            }
+                            div {
+                                border-bottom: 1px solid $black_9E;
+                                width: 100px;
+                            }
+                            .amount {
+                                @include font_style(34px,$red,400,20px);
+                                padding-top: 25px;
+                            }
+                        }
+                        .btn-sample {
+                            @include action_button('blue');
+                            height: 53px;
+                            width: 340px;
+                            @include font_style(14px,null,null,18px);
+                        }
+                        .link-block {
+                            width: auto;
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 22px;
+                            a {
+                                margin-right: 26px;
+                                @include font_style(14px,$black_9E,400,20px);
+                                .rito-mail {
+                                    @include font_style(16px,$green_20);
+                                    padding-right: 10px;
+                                    
+                                }
+                                .rito-phone-call {
+                                    @include font_style(16px,$green_20);
+                                    padding-right: 10px;
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                .product-description-bolck {
+                    margin-top: 40px;
+                    .head-title {
+                        margin-bottom: 27px;
+                        h2 {
+                            @include font_style(18px, null, 400, 24px);
+                        }
+                    }
+                    .sub-title {
+                        p {
+                            @include font_style(14px,$black_9E,400,20px);
+                            padding-bottom: 28px;
+                        }
+                    }
+                }
+                .video-block {
+                    height: 340px;
+                }
+                .product-data {
+                    margin-bottom: 24px;
+                    .label-block {
+                        width: 189px;
+                        @include font_style(14px, $black_75, 400, 20px);
+                    }
+                    .data-block {
+                        width: auto;
+                        @include font_style(14px, $black_75, 400, 20px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        margin-left: 20px;
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            @include box_shadow_small;
+            .page-title {
+                height: 40px;
+                border-bottom: 1px solid $border_color_EB;
+                padding-left: 14px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .form-content {
+                padding: 14px 14px 6px 14px;
+                .product-header-block {
+                    display: flex;
+                    .image-block {
+                        width: 350px;
+                        .swiper-container {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                        .swiper-slide {
+                            background-size: cover;
+                            background-position: center;
+                            height: 294px;
+                            width: 394px;
+                        }
+                        .gallery-thumbs {
+                            box-sizing: border-box;
+                            padding: 10px 0;
+                        }
+                        .gallery-thumbs .swiper-slide {
+                            opacity: 0.4;
+                            height: 53px;
+                            width: 63px;
+                        }
+                        .gallery-thumbs .swiper-slide-thumb-active {
+                            opacity: 1;
+                        }
+                        .images-download {
+                            @include action_button('blue');
+                            height: 32px;
+                            a {
+                                @include font_style(12px,#fff,400,18px);
+                                .rito-image {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                        .btn-block {
+                            display: none;
+                        }
+                        .link-block {
+                            display: none;
+                        }
+                    }
+                    .account-block {
+                        padding-left: 14px;
+                        .button-block {
+                            .btn-new {
+                                @include action_button('white');
+                                @include font_style(12px,$red);
+                                border-width: 2px;
+                                border-style: solid;
+                                border-color: $red;
+                            }
+                            .btn-island {
+                                @include action_button('light-blue');
+                                margin-left: 16px;
+                            }
+                        }
+                        h2 {
+                            @include font_style(18px,$black,400,40px);
+                            margin-top: 23px;
+                        }
+                        .price-block {
+                            width: auto;
+                            margin: 65px 0 49px;
+                            p {
+                                @include font_style(12px,$black_9E,400,20px);
+                                padding-bottom: 4px;
+                            }
+                            .boder-buttom {
+                                border-bottom: 1px solid $black_9E;
+                                width: 62px;
+                            }
+                            div {
+                                border-bottom: 1px solid $black_9E;
+                                width: 100px;
+                            }
+                            .amount {
+                                @include font_style(34px,$red,400,20px);
+                                padding-top: 25px;
+                            }
+                        }
+                        .btn-sample {
+                            @include action_button('blue');
+                            height: 53px;
+                            width: 100%;
+                            @include font_style(14px,null,null,18px);
+                        }
+                        .link-block {
+                            width: auto;
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 22px;
+                            a {
+                                margin-right: 26px;
+                                @include font_style(14px,$black_9E,400,20px);
+                                .rito-mail {
+                                    @include font_style(16px,$green_20);
+                                    padding-right: 10px;
+                                    
+                                }
+                                .rito-phone-call {
+                                    @include font_style(16px,$green_20);
+                                    padding-right: 10px;
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                .product-description-bolck {
+                    margin-top: 40px;
+                    .head-title {
+                        margin-bottom: 27px;
+                        h2 {
+                            @include font_style(18px, null, 400, 24px);
+                        }
+                    }
+                    .sub-title {
+                        p {
+                            @include font_style(14px,$black_9E,400,20px);
+                            padding-bottom: 28px;
+                        }
+                    }
+                }
+                .video-block {
+                    .video-container {
+                        position: relative;
+                        padding-bottom: 56.25%;
+                        padding-top: 30px; height: 0; overflow: hidden;
+                    }
+                    .video-container iframe,
+                    .video-container object,
+                    .video-container embed {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .product-data {
+                    margin-bottom: 24px;
+                    .label-block {
+                        width: 189px;
+                        @include font_style(14px, $black_75, 400, 20px);
+                    }
+                    .data-block {
+                        width: auto;
+                        @include font_style(14px, $black_75, 400, 20px);
+                    }
+                }
+            }
+        }
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .inner-content {
+        margin-left: 10px;
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            @include box_shadow_small;
+            &.mt-20 {
+                margin-top: 10px;
+            }
+            .page-title {
+                height: 35px;
+                border-bottom: 1px solid $border_color_EB;
+                padding-left: 10px;
+                h1 {
+                    @include font_style(14px, $black_55, 400, 24px);
+                }
+            }
+            .form-content {
+                padding: 10px 10px 6px 10px;
+                .product-header-block {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    .image-block {
+                        width: 100%;
+                        .swiper-container {
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                        .swiper-slide {
+                            background-size: cover;
+                            background-position: center;
+                            height: 243px;
+                            width: 285px;
+                        }
+                        .gallery-thumbs {
+                            box-sizing: border-box;
+                            padding: 10px 0;
+                        }
+                        .gallery-thumbs .swiper-slide {
+                            opacity: 0.4;
+                            height: 45px;
+                            width: 100%;
+                        }
+                        .gallery-thumbs .swiper-slide-thumb-active {
+                            opacity: 1;
+                        }
+                        .images-download {
+                            @include action_button('blue');
+                            height: 32px;
+                            width: 100%;
+                            a {
+                                @include font_style(12px,#fff,400,18px);
+                                .rito-image {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                    .sp-btn-block {
+                        display: flex !important;
+                        margin: 10px 0 18px;
+                        .btn-sample {
+                            @include action_button('blue');
+                            height: 50px;
+                            width: 100%;
+                            @include font_style(20px);
+                        }
+                    }
+                    .sp-link-block {
+                        display: flex !important;
+                        flex-direction: column;
+                        a {
+                            @include font_style(12px,$black_9E,400,20px);
+                            padding-bottom: 10px;
+                            .rito-mail {
+                                @include font_style(14px,$green_20);
+                                padding-right: 10px;
+                                
+                            }
+                            .rito-phone-call {
+                                @include font_style(14px,$green_20);
+                                padding-right: 10px;
+                                
+                            }
+                        }
+                    }
+                    .account-block {
+                        padding-left: 0px;
+                        .button-block {
+                            .btn-new {
+                                @include action_button('white');
+                                @include font_style(14px,$red);
+                                border-width: 2px;
+                                border-style: solid;
+                                border-color: $red;
+                            }
+                            .btn-island {
+                                @include action_button('light-blue');
+                                margin-left: 16px;
+                            }
+                        }
+                        h2 {
+                            @include font_style(18px,$black,400,20px);
+                            margin-top: 15px;
+                        }
+                        .price-block {
+                            width: auto;
+                            margin: 20px 0 25px;
+                            flex-direction: row;
+                            p {
+                                @include font_style(12px,$black_9E,400,20px);
+                                padding-bottom: 4px;
+                            }
+                            .amount {
+                                @include font_style(30px);
+                                padding-top: 25px;
+                            }
+                        }
+                        .btn-sample {
+                            display: none;
+                        }
+                        .link-block {
+                            display: none;
+                        }
+                    }
+                }
+                .product-description-bolck {
+                    margin-top: 22px;
+                    .head-title {
+                        margin-bottom: 22px;
+                        h2 {
+                            @include font_style(16px);
+                        }
+                    }
+                    .sub-title {
+                        p {
+                            @include font_style(12px,$black_9E);
+                            padding-bottom: 18px;
+                        }
+                    }
+                }
+                .video-block {
+                    height: 300px;
+                }
+                .product-data {
+                    margin-bottom: 18px;
+                    flex-direction: column;
+                    .label-block {
+                        width: 100%;
+                        @include font_style(12px, $black_75, 400, 20px);
+                    }
+                    .data-block {
+                        width: 100%;
+                        @include font_style(12px, $black_75, 400, 20px);
+                    }
+                }
+            }
+        }
+    }
+}

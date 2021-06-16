@@ -1,0 +1,620 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.dir-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $white;
+    min-width: 250px;
+    overflow: auto;
+    z-index: 1;
+    border: 1px solid $border_color_EB;
+    .second-dir {
+        padding: 8px 0 8px 25px;
+    }
+    .third-dir {
+        padding: 8px 0 8px 35px;
+    }
+}
+
+.dir-dropdown-content a {
+    color: #757575;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.show {
+    display: block;
+}
+
+.display-content {
+    display: block !important;
+}
+
+.inner-content {
+    width: 100%;
+    margin-left: 20px;
+    .box-content {
+        background-color: $white;
+        .page-title {
+            height: 70px;
+            border-bottom: 20px solid #F6F6F6;
+            padding-left: 20px;
+            h1 {
+                @include font_style(16px, $black_55, 400, 0px);
+            }
+        }
+        .box-inner-content {
+            padding: 20px;
+            background-color: $white;
+            .directory-dropdown {
+                position: relative;
+                display: inline-block;
+                .dir-dropbtn {
+                    border: 1px solid #CECECE;
+                    cursor: pointer;
+                    padding: 8px 18px;
+                    margin-right: 15px;
+                    font-size: 14px;
+                    width: auto;
+                    min-width: 185px;
+                    text-align: left;
+                }
+            }
+            .directory-dropdown a:hover {
+                background-color: $white_F6;
+                color: $green_20;
+            }
+            .directory-input {
+                width: 185px;
+            }
+            .submit-section {
+                padding-left: 10px;
+                padding-right: 10px;
+                .btn-submit {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    @include font_style(14px, null, 400);
+                    background-color: $blue_00;
+                    height: 34px;
+                    width: 70px;
+                    color: $white;
+                }
+            }
+            .menu-button {
+                padding: 6px 18px;
+                margin-right: 15px;
+                font-size: 14px;
+                width: auto;
+                min-width: 185px;
+                text-align: left;
+                color: $green_20;
+                border: none;
+                border-radius: 3px;
+                background-color: $white_F6;
+                box-shadow: 2px 2px 2px 0px rgba(220, 220, 220, 1);
+                .custom-icon {
+                    @include font_style(16px);
+                    margin-right: 8px;
+                }
+            }
+            .inverse {
+                background-color: $green_20;
+                color: $white;
+            }
+            .category-listing {
+                @include font_style(12px, $black_75);
+                padding: 16px 0px 50px 0px;
+                .ml-40 {
+                    margin-left: 40px !important;
+                }
+                .ml-70 {
+                    margin-left: 70px !important;
+                }
+                .category-element {
+                    border: 1px solid $border_color_EB;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 39px;
+                    background-color: $white_F6;
+                    padding: 0px 20px;
+                    margin: 6px 0px;
+                    .custom-icon {
+                        @include font_style(16px);
+                        color: $green_20;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .trash {
+                        color: $red;
+                        margin-left: 10px;
+                    }
+                    &:first-child {
+                        border: 0;
+                        box-shadow: 2px 2px 2px 0px rgba(220, 220, 220, 1);
+                    }
+                }
+            }
+            .nestable-lists {
+                #nestable {
+                    .dd-list {
+                        .dd-item {
+                            a {
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                max-width: 1085px;
+                            }
+                            .dir-count {
+                                margin-right: 60px;
+                                @include font_style(14px, $black_75, 400, 20px);
+                            }
+                        }
+                    }
+                }
+            }
+            .form-block {
+                display: none;
+                border: 1px solid $border_color_EB;
+                margin: 14px 0px 5px 0px;
+                .form-content {
+                    padding: 20px 20px 6px 20px;
+                    hr {
+                        margin: 20px -20px 20px;
+                    }
+                    .form-group {
+                        margin-bottom: 14px;
+                        label {
+                            @include font_style(14px, $black_75, 400, 20px);
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            display: flex;
+                            align-items: center;
+                        }
+                        .label-section {
+                            width: 175px;
+                        }
+                        .field-section {
+                            width: calc(100% - 175px);
+                            .custom-select {
+                                width: 509px;
+                            }
+                            input {
+                                width: 509px;
+                            }
+                            .description {
+                                height: 134px;
+                            }
+                        }
+                    }
+                    .form-submission {
+                        padding: 0px 0px 20px 175px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            .page-title {
+                height: 55px;
+                border-bottom: 16px solid #F6F6F6;
+                padding-left: 16px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .box-inner-content {
+                padding: 16px;
+                .menu-button {
+                    font-size: 12px;
+                    margin-bottom: 8px;
+                    padding: 6px 18px;
+                    .custom-icon {
+                        @include font_style(14px);
+                    }
+                }
+                .directory-dropdown {
+                    position: relative;
+                    display: inline-block;
+                    .dir-dropbtn {
+                        border: 1px solid #CECECE;
+                        cursor: pointer;
+                        padding: 4px 18px;
+                        margin-right: 15px;
+                        font-size: 14px;
+                        width: auto;
+                        min-width: 185px;
+                        text-align: left;
+                        height: 30px;
+                    }
+                }
+                .submit-section {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    .btn-submit {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        @include font_style(14px, null, 400);
+                        background-color: $blue_00;
+                        height: 30px;
+                        width: 70px;
+                        color: $white;
+                    }
+                }
+                .category-listing {
+                    @include font_style(12px, $black_75);
+                    padding: 16px 0px 50px 0px;
+                    .ml-40 {
+                        margin-left: 40px !important;
+                    }
+                    .ml-70 {
+                        margin-left: 70px !important;
+                    }
+                    .category-element {
+                        .custom-icon {
+                            @include font_style(14px);
+                        }
+                        .trash {
+                            color: $red;
+                            margin-left: 10px;
+                        }
+                        &:first-child {
+                            border: 0;
+                            box-shadow: 2px 2px 2px 0px rgba(220, 220, 220, 1);
+                        }
+                    }
+                }
+                .nestable-lists {
+                    #nestable {
+                        .dd-list {
+                            .dd-item {
+                                a {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    max-width: 600px;
+                                }
+                                .dir-count {
+                                    margin-right: 50px;
+                                    @include font_style(12px, $black_75, 400, 20px);
+                                }
+                            }
+                        }
+                    }
+                }
+                .form-block {
+                    border: 1px solid $border_color_EB;
+                    margin: 14px 0px 5px 0px;
+                    .form-content {
+                        padding: 16px 16px 6px 16px;
+                        hr {
+                            margin: 16px -16px 16px;
+                        }
+                        .form-group {
+                            margin-bottom: 14px;
+                            label {
+                                @include font_style(12px, $black_75, 400, 20px);
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .label-section {
+                                width: 175px;
+                            }
+                            .field-section {
+                                width: calc(100% - 175px);
+                                .custom-select {
+                                    width: 509px;
+                                }
+                                input {
+                                    width: 509px;
+                                }
+                                .description {
+                                    height: 134px;
+                                }
+                            }
+                        }
+                        .form-submission {
+                            padding: 0px 0px 20px 175px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+
+@media only screen and (max-width: 768px) {
+    .inner-content {
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            .page-title {
+                height: 55px;
+                padding-left: 16px;
+                border-bottom: 16px solid #F6F6F6;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .box-inner-content {
+                padding: 16px;
+                .menu-button {
+                    .custom-icon {
+                        @include font_style(14px);
+                    }
+                }
+                .category-listing {
+                    @include font_style(12px, $black_75);
+                    padding: 16px 0px 50px 0px;
+                    .ml-40 {
+                        margin-left: 40px !important;
+                    }
+                    .ml-70 {
+                        margin-left: 70px !important;
+                    }
+                    .category-element {
+                        .custom-icon {
+                            @include font_style(14px);
+                        }
+                        .trash {
+                            color: $red;
+                            margin-left: 10px;
+                        }
+                        &:first-child {
+                            border: 0;
+                            box-shadow: 2px 2px 2px 0px rgba(220, 220, 220, 1);
+                        }
+                    }
+                }
+                .nestable-lists {
+                    #nestable {
+                        .dd-list {
+                            .dd-item {
+                                a {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    max-width: 500px;
+                                }
+                            }
+                            .dir-count {
+                                margin-right: 40px;
+                                @include font_style(12px, $black_75, 400, 20px);
+                            }
+                        }
+                    }
+                }
+                .form-block {
+                    .form-content {
+                        .form-group {
+                            margin-bottom: 14px;
+                            .label-section {
+                                width: 175px;
+                            }
+                            .field-section {
+                                width: 100%;
+                                .custom-select {
+                                    width: 100%;
+                                }
+                                input {
+                                    width: 100%;
+                                }
+                                .description {
+                                    height: 120px;
+                                }
+                            }
+                        }
+                        .form-submission {
+                            padding: 0px 0px 20px 175px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+
+@media screen and (max-width: 640px) {
+    .inner-content {
+        width: 100%;
+        .box-content {
+            background-color: $white;
+            .page-title {
+                height: 45px;
+                border-bottom: 10px solid #F6F6F6;
+                padding-left: 10px;
+                h1 {
+                    @include font_style(13px);
+                }
+            }
+            .box-inner-content {
+                padding: 10px;
+                background-color: $white;
+                .menu-button {
+                    padding: 8px 18px;
+                    margin: 0 0 10px 0;
+                    @include font_style(12px);
+                    width: 100%;
+                    text-align: left;
+                    color: $green_20;
+                    border: none;
+                    border-radius: 3px;
+                    background-color: $white_F6;
+                    box-shadow: 2px 2px 2px 0px rgba(220, 220, 220, 1);
+                    .custom-icon {
+                        @include font_style(16px);
+                        margin-right: 8px;
+                    }
+                }
+                .mobile-res {
+                    flex-direction: column;
+                }
+                .directory-dropdown {
+                    position: relative;
+                    display: inline-block;
+                    .dir-dropbtn {
+                        border: 1px solid #CECECE;
+                        cursor: pointer;
+                        padding: 8px 18px;
+                        margin-right: 15px;
+                        margin-bottom: 10px;
+                        font-size: 12px;
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+                .directory-input {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                .submit-section {
+                    padding-left: 0;
+                    padding-right: 0;
+                    .btn-submit {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        @include font_style(12px, null, 400);
+                        background-color: $blue_00;
+                        height: 30px;
+                        width: 100%;
+                        color: $white;
+                        margin-bottom: 10px;
+                    }
+                }
+                .inverse {
+                    background-color: $green_20;
+                    color: $white;
+                }
+                .category-listing {
+                    @include font_style(12px, $black_75);
+                    padding: 16px 0px 50px 0px;
+                    .ml-40 {
+                        margin-left: 40px !important;
+                    }
+                    .ml-70 {
+                        margin-left: 70px !important;
+                    }
+                    .category-element {
+                        border: 1px solid $border_color_EB;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        height: 39px;
+                        background-color: $white_F6;
+                        padding: 0px 20px;
+                        margin: 6px 0px;
+                        .custom-icon {
+                            @include font_style(16px);
+                            color: $green_20;
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                        .trash {
+                            color: $red;
+                            margin-left: 10px;
+                        }
+                        &:first-child {
+                            border: 0;
+                            box-shadow: 2px 2px 2px 0px rgba(220, 220, 220, 1);
+                        }
+                    }
+                }
+                .nestable-lists {
+                    #nestable {
+                        .dd-list {
+                            .dd-item {
+                                a {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    max-width: 225px;
+                                }
+                                .dir-count {
+                                    margin-right: 20px;
+                                    @include font_style(12px, $black_75, 400, 20px);
+                                }
+                            }
+                        }
+                    }
+                }
+                .form-block {
+                    border: 1px solid $border_color_EB;
+                    margin: 10px 0px 5px 0px;
+                    .form-content {
+                        padding: 10px;
+                        hr {
+                            margin: 10px -10px 10px;
+                        }
+                        .form-group {
+                            margin-bottom: 10px;
+                            flex-direction: column;
+                            label {
+                                @include font_style(12px, $black_75, 400, 20px);
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                display: flex;
+                                align-items: center;
+                            }
+                            .label-section {
+                                width: 100%;
+                                margin-bottom: 6px;
+                            }
+                            .field-section {
+                                width: 100%;
+                                .custom-select {
+                                    width: 100%
+                                }
+                                input {
+                                    width: 100%
+                                }
+                                .description {
+                                    height: 80px;
+                                }
+                            }
+                        }
+                        .form-submission {
+                            padding: 2px;
+                            justify-content: center;
+                            @include font_style(12px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

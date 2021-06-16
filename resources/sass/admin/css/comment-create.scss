@@ -1,0 +1,182 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+.inner-content {
+    margin-left: 20px;
+    width: 100%;
+    .box-content {
+        background-color: $white;
+        @include box_shadow_small;
+        &.mt-20 {
+            margin-top: 20px;
+        }
+        .page-title {
+            height: 50px;
+            border-bottom: 1px solid $border_color_EB;
+            padding-left: 20px;
+            h1 {
+                @include font_style(18px, $black_55, 400, 24px);
+            }
+        }
+        .form-block {
+            .form-content {
+                padding: 26px;
+                .form-group {
+                    margin-bottom: 0;
+                    label {
+                        @include font_style(14px, $black_75, 400, 20px);
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .label-section {
+                        width: 175px;
+                        height: 34px;
+                    }
+                    textarea{
+                        width: 509px;
+                        height: 134px;
+                    }
+                }
+            }
+            .form-submission {
+                padding: 20px 26px;
+                border-top: 1px solid $border_color_EB;
+                .btn-submit {
+                    @include submit_button();
+                }
+            }
+        }
+    }
+    .mt-seller {
+        margin-top: 167px;
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 40px;
+                padding-left: 14px;
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    padding: 14px;
+                    hr {
+                        margin: 12px -12px 12px;
+                    }
+                    .form-group {
+                        label {
+                            @include font_style(12px);
+                        }
+                        .field-section {
+                            input, textarea, select {
+                                width: 309px;
+                                height: 134px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                h1 {
+                    @include font_style(14px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    .form-group {
+                        label {
+                            @include font_style(12px);
+                        }
+                        .field-section {
+                            width: 100%;
+                            textarea {
+                                width: 100%;
+                                height: 120px;
+                            }
+                        }
+                    }
+                }
+                .form-submission {
+                    padding: 20px 26px;
+                    border-top: 1px solid $border_color_EB;
+                    .btn-submit {
+                        @include submit_button();
+                    }
+                }
+            }
+        }
+    }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .inner-content {
+        .box-content {
+            .page-title {
+                height: 34px;
+                padding: 10px;
+                h1 {
+                    @include font_style(13px);
+                }
+            }
+            .form-block {
+                .form-content {
+                    hr {
+                        margin: 10px -10px 10px;
+                    }
+                    padding: 10px;
+                    .form-group {
+                        padding-bottom: 2px;
+                        flex-direction: column;
+                        label {
+                            padding-bottom: 4px;
+                            @include font_style(12px);
+                        }
+                        .label-section {
+                            width: 100%;
+                            .required-span {
+                                margin-bottom: 4px;
+                            }
+                        }
+                        .field-section {
+                            width: 100%;
+                            textarea{
+                               width: 100%;
+                               font-size: 12px;
+                               height: 80px;
+                            }
+                        }
+                    }
+                }
+                .form-submission {
+                    border-top: 1px solid $border_color_EB;
+                    .btn-submit {
+                        @include submit_button(null, null, null, null,32px, 135px);
+                    }
+                }
+            }
+        }
+    }
+}

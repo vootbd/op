@@ -1,0 +1,237 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+.dropzone .dz-preview .dz-image img {
+  margin: auto;   /* center the image inside the thumbnail */
+}
+.dropzone .dz-preview.dz-error .dz-error-mark{
+  display: none !important;
+}
+.dropzone .dz-preview.dz-error .dz-error-message{
+  display: none !important;
+}
+.dropzone .dz-preview .dz-remove {
+  display: none !important;
+}
+.inner-content {
+  width: 100%;
+  margin-left: 20px;
+  .box-content {
+    background-color: $white;
+    padding-bottom: 20px;
+    .page-title {
+      height: 50px;
+      border-bottom: 1px solid $border_color_EB;
+      padding-left: 20px;
+      h1 {
+        @include font_style(16px, $black_55, 400, 0px);
+      }
+    }
+    .box-inner-content {
+      background-color: $white;
+      margin-left: 30px;
+      margin-top: 30px;
+      .form-block {
+        margin: 0px 0px 5px 0px;
+        hr {
+          margin: 20px 20px 15px 20px;
+        }
+        .form-content {
+          padding: 20px 0px 0px 20px;
+          hr {
+            margin: 20px 20px 20px 0px !important;
+          }
+          #load-user-form {
+            padding-top: 20px;
+          }
+          .form-group {
+            margin-bottom: 8px;
+            label {
+              @include font_style(14px, $black_75, 400, 20px);
+              padding-top: 0;
+              padding-bottom: 0;
+              display: flex;
+              align-items: center;
+              padding-bottom: 10px;
+            }
+            .label-section {
+              width: 100%;
+            }
+            .field-section {
+              .custom-css {
+                height: 483px;
+                width: 674px;
+              }
+            }
+          }
+        }
+      }
+      .dropzone {
+        height: 200px !important;
+        margin-right: 25px !important;
+        background: #efefef !important;
+        border: 3px dotted #bcbcbc !important;
+      }
+      .footer {
+        .footer-text {
+          font-size: 13px;
+          margin-left: -20px;
+        }
+      }
+    }
+  }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1279px
+==================================================*/
+@media only screen and (max-width: 1279px) {
+  .inner-content {
+    .box-content {
+      .page-title {
+        height: 40px;
+        padding-left: 14px;
+        h1 {
+          @include font_style(14px);
+        }
+      }
+      .box-inner-content {
+        .form-block {
+          .form-content {
+            padding: 14px;
+            hr {
+              margin: 12px -12px 12px;
+            }
+            #load-user-form {
+              padding-top: 0;
+            }
+            .form-group {
+              label {
+                @include font_style(12px);
+              }
+              .mobile-res {
+                flex-direction: row !important;
+              }
+            }
+          }
+        }
+        .form-submission {
+          padding: 5px 0px 20px 0;
+          align-items: center;
+          justify-content: center;
+          .btn-submit {
+            width: 130px;
+          }
+        }
+      }
+    }
+  }
+  .mt-20 {
+    margin-top: 6px !important;
+  }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 641px to 767px
+==================================================*/
+@media only screen and (max-width: 767px) {
+  .inner-content {
+    .box-content {
+      .page-title {
+        h1 {
+          @include font_style(14px);
+        }
+      }
+      .box-inner-content {
+        .form-block {
+          .form-content {
+            hr {
+              margin: 20px 0;
+            }
+            #load-user-form {
+              padding-top: 0;
+            }
+            .form-group {
+              label {
+                @include font_style(12px);
+              }
+              .field-section {
+                width: 100%;
+                .custom-css {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+  .inner-content {
+    .box-content {
+      .page-title {
+        height: 34px;
+        padding: 10px;
+        h1 {
+          @include font_style(13px);
+        }
+      }
+      .box-inner-content {
+        .form-block {
+          hr {
+            margin: 0 10px 20px 10px;
+          }
+          .form-content {
+            hr {
+              margin: 15px 0 !important;
+            }
+            #load-user-form {
+              padding-top: 0;
+            }
+            padding: 10px;
+            .form-group {
+              flex-direction: column;
+              label {
+                padding-bottom: 4px;
+                @include font_style(12px);
+              }
+              .label-section {
+                width: 100%;
+                .required-span {
+                  margin-bottom: 4px;
+                }
+              }
+              .mobile-res {
+                flex-direction: row !important;
+              }
+              .field-section {
+                width: 100%;
+                .custom-css {
+                  width: 100%;
+                  height: 150px;
+                }
+              }
+            }
+          }
+          .form-submission {
+            padding: 5px 0px 20px 0;
+            align-items: center;
+            justify-content: center;
+            .btn-submit {
+              width: 130px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+
+.top-navbar {
+    background-color: $white;
+    .logo-block {
+        height: 70px;
+        .logo {
+            height: 39px;
+        }
+    }
+    .user-block {
+        height: 70px;
+        position: relative;
+        .user {
+            color: $green_20;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            padding: 10px;
+            background-color: transparent;
+            border: 1px solid transparent;
+            z-index: 11;
+            transition: all ease-in-out .30s;
+            &::after {
+                display: inline-block;
+                margin-left: 8px;
+                vertical-align: .255em;
+                content: "";
+                border-top: .3em solid;
+                border-right: .3em solid transparent;
+                border-bottom: 0;
+                border-left: .3em solid transparent;
+                transition: all ease-in-out .30s;
+            }
+            &:hover {
+                background-color: #F9FEFF;
+                border: 1px solid #DCECEF;
+            }
+            &.active {
+                background-color: #F9FEFF;
+                border: 1px solid #DCECEF;
+                border-bottom: 1px solid transparent;
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .user-navbar {
+            display: none;
+            position: absolute;
+            height: 188px;
+            width: 198px;
+            background-color: #F9FEFF;
+            border: 1px solid #DCECEF;
+            right: 0;
+            top: 57px;
+            z-index: 10;
+            padding: 20px 16px 25px;
+            &.show {
+                display: block;
+            }
+            .text {
+                @include font_style(14px, #333, 400, 20px);
+            }
+            .date {
+                @include font_style(14px, #333, 400, 20px);
+                padding-bottom: 8px;
+            }
+            .user-links {
+                height: 40px;
+                width: 100%;
+                background-color: #D9F7FD;
+                margin-bottom: 8px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid transparent;
+                transition: all ease-in-out .30s;
+                @include font_style(14px, $green_20, 400, 24px);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &:hover {
+                    border: 1px solid #a6e7f3;
+                }
+            }
+        }
+        .rito-menu {
+            color: $green_20;
+            margin-left: 10px;
+            font-size: 26px;
+            cursor: pointer;
+            display: none;
+        }
+    }
+}
+
+/*==================================================
+        Media query for all iPad and tabs
+        Screen 768px to 1200px
+==================================================*/
+@media only screen and (max-width: 1200px) {
+    .top-navbar {
+        .logo-block {
+            height: 48px;
+            .logo {
+                height: 25px;
+            }
+        }
+        .user-block {
+            height: 48px;
+            .user {
+                color: $green_20;
+                font-size: 12px;
+            }
+            .rito-menu {
+                display: block;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+/*==================================================
+        Device = Smart Phone (portrait)
+        Screen = B/w screen to 640px
+==================================================*/
+@media screen and (max-width: 640px) {
+    .top-navbar {
+        .container-fluid {
+            padding: 0 8px;
+        }
+        .logo-block {
+            height: 45px;
+            .logo {
+                height: 22px;
+            }
+        }
+        .user-block {
+            height: auto;
+            .user {
+                font-size: 12px;
+                padding: 0;
+                &.active, &:hover {
+                    background-color: transparent; 
+                    border: 1px solid transparent;
+                    border-bottom: 1px solid transparent;
+                }
+                &::after {
+                    margin-left: 5px;
+                }
+            }
+            .user-navbar {
+                top: 40px;
+                height: auto;
+                width: 160px;
+                padding: 12px 10px 15px;
+                .text {
+                    font-size: 10px;
+                }
+                .date {
+                    font-size: 10px;
+                }
+                .user-links {
+                    height: 26px;
+                    font-size: 10px;
+                }
+            }
+            .rito-menu {
+                font-size: 24px;
+                margin-right: 5px;
+            }
+        }
+    }
+}

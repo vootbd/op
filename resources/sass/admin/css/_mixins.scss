@@ -1,0 +1,369 @@
+@import "./variables.scss";
+@mixin box_shadow_small {
+    box-shadow: 0 0 3px #dee2e6;
+}
+
+@mixin auth_button($height:null, $width:null, $bg:null, $mt:null, $mr:null, $mb:null, $ml:null) {
+    @if $height {
+        height: $height;
+    }
+    @else {
+        height: 50px;
+    }
+    @if $width {
+        width: $width;
+    }
+    @else {
+        width: 100%;
+    }
+    @if $bg {
+        background-color: $bg;
+    }
+    @else {
+        background-color: $green_20;
+    }
+    border-radius: 4px;
+    @include font_style(20px, $white, 700, 18px);
+    box-shadow: 0 2px 6px rgba(51, 51, 51, 0.20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @if $mt {
+        margin-top: $mt;
+    }
+    @if $mr {
+        margin-right: $mr;
+    }
+    @if $mb {
+        margin-bottom: $mb;
+    }
+    @if $ml {
+        margin-left: $ml;
+    }
+}
+
+@mixin common_button($height:null, $width:null, $bg:null, $col:null, $mt:null, $mr:null, $mb:null, $ml:null) {
+    @if $height {
+        height: $height;
+    }
+    @else {
+        height: 38px;
+    }
+    @if $width {
+        width: $width;
+    }
+    @else {
+        width: 140px;
+    }
+    @if $bg {
+        background-color: $bg;
+    }
+    @else {
+        background-color: $black_9E;
+    }
+    @if $col {
+        color: $col;
+    }
+    @else {
+        color: $white;
+    }
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(51, 51, 51, 0.20);
+    background-color: $black_9E;
+    color: $white;
+    display: block;
+    text-align: center;
+    padding: 0;
+    @if $mt {
+        margin-top: $mt;
+    }
+    @if $mr {
+        margin-right: $mr;
+    }
+    @if $mb {
+        margin-bottom: $mb;
+    }
+    @if $ml {
+        margin-left: $ml;
+    }
+}
+
+@mixin clear_button($mt:null, $mr:null, $mb:null, $ml:null, $height:null, $width:null) {
+    @if $height {
+        height: $height;
+    }
+    @else {
+        height: 38px;
+    }
+    @if $width {
+        width: $width;
+    }
+    @else {
+        width: 140px;
+    }
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(51, 51, 51, 0.20);
+    background-color: $black_9E;
+    color: $white;
+    display: block;
+    text-align: center;
+    padding: 0;
+    @if $mt {
+        margin-top: $mt;
+    }
+    @if $mr {
+        margin-right: $mr;
+    }
+    @if $mb {
+        margin-bottom: $mb;
+    }
+    @if $ml {
+        margin-left: $ml;
+    }
+    transition: all ease-in-out .30s;
+    &:hover {
+        background-color: #ACACAC;
+    }
+}
+
+@mixin submit_button($mt:null, $mr:null, $mb:null, $ml:null, $height:null, $width:null) {
+    @if $height {
+        height: $height;
+    }
+    @else {
+        height: 38px;
+    }
+    @if $width {
+        width: $width;
+    }
+    @else {
+        width: 140px;
+    }
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(51, 51, 51, 0.20);
+    background-color: $green_20;
+    color: $white;
+    display: block;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @if $mt {
+        margin-top: $mt;
+    }
+    @if $mr {
+        margin-right: $mr;
+    }
+    @if $mb {
+        margin-bottom: $mb;
+    }
+    @if $ml {
+        margin-left: $ml;
+    }
+    transition: all ease-in-out .30s;
+    &:hover {
+        background-color: #3A95A8;
+    }
+}
+
+// blue, gray, light-blue, yellow, red, green, white-gray , black,white
+@mixin action_button ($name, $mt:null, $mr:null, $mb:null, $ml:null, $height:null, $width:null) {
+    $hover: null;
+    @if $height {
+        height: $height;
+    }
+    @else {
+        height: 25px;
+    }
+    @if $width {
+        width: $width;
+    }
+    @else {
+        width: auto;
+    }
+    @if ($name=='blue') {
+        background-color: $green_20;
+        $hover: #3A95A8;
+    }
+    @if ($name=='blue-light') {
+        background-color: $blue_4B;
+        $hover: #6097C7;
+    }
+    @if ($name=='gray') {
+        background-color: $black_9E;
+        $hover: #ACACAC;
+    }
+    @if ($name=='gray-light') {
+        background-color: $gray_BC;
+        $hover: #ACACAC;
+    }
+    @if ($name=='light-blue') {
+        background-color: $blue_7A;
+        $hover: #8D99F3;
+    }
+    @if ($name=='yellow') {
+        background-color: $yellow_F5;
+        $hover: #F6C961;
+    }
+    @if ($name=='red') {
+        background-color: $red;
+        $hover: #FC6D65;
+    }
+    @if ($name=='green') {
+        background-color: $green_72;
+        $hover: #86DEA8;
+    }
+    @if ($name=='green-light') {
+        background-color: $green_5A;
+        $hover: #6DBF8D;
+    }
+    @if ($name=='white-gray') {
+        background-color: $border_color_EB;
+        $hover: #EDEDED;
+    }
+    @if ($name=='black') {
+        background-color: $black;
+        $hover: #515151;
+    }
+    @if ($name=='white') {
+        background-color: $white;
+        $hover: #EDEDED;
+    }
+    @if ($name=='light-bl') {
+        background-color: #CA6F1E;
+        $hover: #BA4A00;
+    }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(51, 51, 51, 0.20);
+    @include font_style(13px, $white, 400, 15px);
+    padding: 0 15px;
+    border-radius: 2px;
+    @if $mt {
+        margin-top: $mt;
+    }
+    @if $mr {
+        margin-left: $mr;
+    }
+    @if $mb {
+        margin-bottom: $mb;
+    }
+    @if $ml {
+        margin-right: $ml;
+    }
+    transition: all ease-in-out .30s;
+    &:hover {
+        background-color: $hover;
+    }
+}
+
+// global font style
+@mixin font_style($size, $color:null, $weight:null, $lineHeight:null) {
+    font-size: $size;
+    color: $color;
+    @if $weight {
+        font-weight: $weight;
+        @if $weight==bold {
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+    @if $lineHeight {
+        line-height: $lineHeight;
+    }
+}
+
+@mixin image-folder-path($resource, $folder-dir:null) {
+    @if $folder-dir {
+        background-image: url(../_img/#{$folder-dir}/#{$resource});
+    }
+    @else {
+        background-image: url(../_img/#{$resource});
+    }
+}
+
+@mixin image-folder-path-important($resource, $folder-dir:null) {
+    @if $folder-dir {
+        background-image: url(../_img/#{$folder-dir}/#{$resource}) !important;
+    }
+    @else {
+        background-image: url(../_img/#{$resource}) !important;
+    }
+}
+
+@mixin pair-image-folder-path($resource1, $resource2, $folder-dir:null) {
+    @if $folder-dir {
+        background-image: url(../_img/#{$folder-dir}/#{$resource1}),
+        url(../_img/#{$folder-dir}/#{$resource2});
+    }
+    @else {
+        background-image: url(../_img/#{$resource2}),
+        url(../_img/#{$resource2});
+    }
+}
+
+
+//single select 
+@mixin single-select-arrow() {
+    background-image: url('../../../image/sort-down.svg');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    -webkit-appearance: none;
+}
+
+/**
+ * Custom scroll bar for cross-browser
+ * @parm n/a
+ */
+
+@mixin custom_scrollbar {
+     ::-webkit-scrollbar {
+        -webkit-appearance: none !important;
+        width: 3px !important;
+        height: 10px !important;
+        margin-top: 0 !important;
+        position: absolute !important;
+        top: 50px !important;
+    }
+     ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: #B2B2B2 !important;
+    }
+     ::-webkit-scrollbar-track {
+        border-left: 1px solid #D4D4D4;
+        border-right: 1px solid #D4D4D4;
+        margin-left: -1px;
+        margin-right: -1px;
+        background-color: #fff;
+    }
+    .custom-scroll-bar {
+        // # For Firefox
+        scrollbar-color: #B2B2B2 #EDEDED;
+        scrollbar-width: thin;
+        // # For Internet Explorer
+        scrollbar-face-color: #B2B2B2;
+        scrollbar-arrow-color: #EDEDED;
+        scrollbar-track-color: #EDEDED;
+        // # Future modification hints
+        //scrollbar-shadow-color:#05B7FF;
+        //scrollbar-highlight-color:#05B7FF;
+        //scrollbar-3dlight-color:#808080;
+        //scrollbar-darkshadow-Color:#202020;
+    }
+}
+
+/**
+ * word-break mixin start
+ */
+@mixin word_break($lineNumber) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lineNumber;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+ /**
+ * word-break mixin end
+ */
