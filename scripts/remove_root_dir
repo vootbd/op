@@ -1,0 +1,10 @@
+#!/bin/bash
+
+rm -rf /data/rito_db_source/composer.json
+rm -rf /data/rito_db_source/server.php
+rm -rf /data/rito_db_source/app/
+rm -rf /data/rito_db_source/database/
+rm -rf /data/rito_db_source/config/
+rm -rf /data/rito_db_source/resources/
+rm -rf /data/rito_db_source/routes/
+rm -rf /data/rito_db_source/storage/

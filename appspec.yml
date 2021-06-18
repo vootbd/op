@@ -1,0 +1,35 @@
+version: 0.0
+os: linux
+files:
+  - source: /composer.json
+    destination: /data/rito_db_source
+  - source: /server.php
+    destination: /data/rito_db_source
+  - source: /app/
+    destination: /data/rito_db_source/app
+  - source: /database/
+    destination: /data/rito_db_source/database
+  - source: /config/
+    destination: /data/rito_db_source/config
+  - source: /resources/
+    destination: /data/rito_db_source/resources
+  - source: /routes/
+    destination: /data/rito_db_source/routes
+  - source: /storage/
+    destination: /data/rito_db_source/storage
+hooks:
+  BeforeInstall:
+    - location: scripts/remove_root_dir
+      timeout: 900
+      runas: root
+  AfterInstall:
+    - location: scripts/install_dependencies
+      timeout: 900
+      runas: root
+    - location: scripts/start_server
+      timeout: 900
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_server
+      timeout: 900
+      runas: root

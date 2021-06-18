@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd /data/rito_db_source/
+composer update
+php artisan config:cache
+php artisan migrate
+php artisan config:cache
+cd /data/
+chown -R www-data:www-data rito_db_source
+chmod -R 755 rito_db_source
+
