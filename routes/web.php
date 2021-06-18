@@ -174,6 +174,6 @@ Route::group(['middleware' => ['auth', 'checkActiveUser'], ['role:admin|operator
  * Load page details by url param
  */
 
-if (App::environment('staging') || App::environment('production')) {
-  URL::forceScheme('https');
-}
+//if (App::environment('staging') || App::environment('production')) {
+// URL::forceScheme('https');
+//}
